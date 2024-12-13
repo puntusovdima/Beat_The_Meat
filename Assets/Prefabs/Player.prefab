@@ -137,7 +137,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,6 +196,8 @@ GameObject:
   - component: {fileID: 909511104154559411}
   - component: {fileID: 5548988162518526739}
   - component: {fileID: 8427919006756431097}
+  - component: {fileID: 5587963705900575037}
+  - component: {fileID: 2893692577938116931}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ee23dccd8e0fa44b5613b2142272b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBeatController: {fileID: 0}
+  playerBeatController: {fileID: 4433614367696069421}
 --- !u!50 &5548988162518526739
 Rigidbody2D:
   serializedVersion: 4
@@ -318,6 +320,41 @@ CapsuleCollider2D:
   m_Offset: {x: -0.08722967, y: 0.8097049}
   m_Size: {x: 0.6415235, y: 1.5134714}
   m_Direction: 0
+--- !u!114 &5587963705900575037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7114299869744011908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa8f2d27fef3a141a66e4d0d1dee681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 1
+  speedY: 1
+  jumpForce: 0
+  damage: 10
+  maxHealthPoints: 100
+  hitAnchor: {fileID: 7586846905561715661}
+  bottomAnchor: {fileID: 7887764199696719236}
+  hitSize: {x: 0, y: 0}
+--- !u!114 &2893692577938116931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7114299869744011908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fa975e2859f274994e210417f469f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  _currentHealth: 0
 --- !u!1 &8309531864156460346
 GameObject:
   m_ObjectHideFlags: 0
