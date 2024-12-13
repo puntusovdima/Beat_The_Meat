@@ -926,10 +926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 909511104154559411, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
-      propertyPath: playerBeatController
+    - target: {fileID: 2893692577938116931, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
+      propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1101679458}
+      objectReference: {fileID: 1781763503}
     - target: {fileID: 4447349085782924415, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -970,10 +970,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5733403640708002043, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7114299869744011908, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
       propertyPath: m_Name
       value: Player
@@ -981,13 +977,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7114299869744011908, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1101679460}
-    - targetCorrespondingSourceObject: {fileID: 7114299869744011908, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1101679462}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
 --- !u!1 &1101679454 stripped
 GameObject:
@@ -1005,41 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3799015a5abc5d348ba5b76ee9eaf3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1101679460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101679454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa8f2d27fef3a141a66e4d0d1dee681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 1
-  speedY: 1
-  jumpForce: 0
-  damage: 10
-  maxHealthPoints: 100
-  hitAnchor: {fileID: 1993281860}
-  bottomAnchor: {fileID: 1358798590}
-  hitSize: {x: 0, y: 0}
---- !u!114 &1101679462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101679454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07fa975e2859f274994e210417f469f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  healthBar: {fileID: 1781763503}
-  _currentHealth: 0
 --- !u!1 &1151401756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,11 +1232,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!4 &1358798590 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7887764199696719236, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
-  m_PrefabInstance: {fileID: 1085466788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1494815691
 GameObject:
   m_ObjectHideFlags: 0
