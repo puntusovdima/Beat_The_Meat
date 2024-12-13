@@ -10,6 +10,7 @@ public class DestructibleObject : MonoBehaviour, ITriggerEnter
     public void HitByPlayer(GameObject player)
     {
         Instantiate(itemDrop, dropSite.position, Quaternion.identity);
+        coinAnimator.enabled = true;
         coinAnimator.Play(coinAnimHash);
         Destroy(gameObject);
     }
