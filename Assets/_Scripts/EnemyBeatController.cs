@@ -13,6 +13,7 @@ public class EnemyBeatController : MonoBehaviour, ITriggerEnter
     private Vector2 _movement;
     private Animator _anim;
     private Transform _target;
+    
     public void HitByPlayer(GameObject player)
     {
         throw new System.NotImplementedException();

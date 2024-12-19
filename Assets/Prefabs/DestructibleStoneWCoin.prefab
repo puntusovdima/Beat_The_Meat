@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 7741859319291279832}
   - component: {fileID: 9106798083540153134}
   m_Layer: 0
-  m_Name: DestructibleObject
+  m_Name: DestructibleStoneWCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

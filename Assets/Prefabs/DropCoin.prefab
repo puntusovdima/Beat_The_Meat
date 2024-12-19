@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7904250841997611609}
   m_Layer: 0
-  m_Name: DropItem
+  m_Name: DropCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
