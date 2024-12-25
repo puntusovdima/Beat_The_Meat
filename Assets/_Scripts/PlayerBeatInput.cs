@@ -14,8 +14,10 @@ public class PlayerBeatInput : MonoBehaviour
         }
 
         playerBeatController = GetComponent<PlayerBeatController>();
-        InputManager.Instance.JumpPerformed += JumpPerformed;
-        InputManager.Instance.FirePerformed += FirePerformed;
+        //InputManager.Instance.JumpPerformed += JumpPerformed;
+        //InputManager.Instance.FirePerformed += FirePerformed;
+        TestInputManager.Instance.FirePerformed += FirePerformed;
+        TestInputManager.Instance.JumpPerformed += JumpPerformed;
     }
 
     private void FirePerformed()

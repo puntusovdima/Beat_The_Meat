@@ -1,5 +1,5 @@
 {
-    "name": "TestInpuActions",
+    "name": "TestInputActions",
     "maps": [
         {
             "name": "Player",
@@ -257,6 +257,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ced052ab-8492-48a1-8b2a-308edc244566",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard_Mouse",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -15,10 +15,10 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public partial class @TestInpuActions: IInputActionCollection2, IDisposable
+public partial class TestInputActions: IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @TestInpuActions()
+    public TestInputActions()
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""TestInpuActions"",
@@ -471,8 +471,8 @@ public partial class @TestInpuActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
-        private @TestInpuActions m_Wrapper;
-        public PlayerActions(@TestInpuActions wrapper) { m_Wrapper = wrapper; }
+        private TestInputActions m_Wrapper;
+        public PlayerActions(TestInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @HorizontalMove => m_Wrapper.m_Player_HorizontalMove;
@@ -545,8 +545,8 @@ public partial class @TestInpuActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_UnPause;
     public struct UIActions
     {
-        private @TestInpuActions m_Wrapper;
-        public UIActions(@TestInpuActions wrapper) { m_Wrapper = wrapper; }
+        private TestInputActions m_Wrapper;
+        public UIActions(TestInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @UnPause => m_Wrapper.m_UI_UnPause;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }

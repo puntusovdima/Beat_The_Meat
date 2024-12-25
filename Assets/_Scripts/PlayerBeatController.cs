@@ -1,37 +1,48 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D), typeof(PlayerBeatInput))]
 public class PlayerBeatController : CharacterBeatController
 {
-    private enum CharacterState {Idle, Walk, Jump, Attack, Fall, Hurt, Die}
-    
-    private readonly int IdleAnimState = Animator.StringToHash("Player_Idle");
-    private readonly int RunAnimState = Animator.StringToHash("Player_Run");
-    private readonly int JumpAnimState = Animator.StringToHash("Player_Jump");
-    private readonly int AttackAnimState = Animator.StringToHash("Player_Attack");
-    private readonly int FallAnimState = Animator.StringToHash("Player_Fall");
-    private readonly int HitAnimState = Animator.StringToHash("Player_Hit");
-    private readonly int DeathAnimState = Animator.StringToHash("Player_Death");
+    private enum CharacterState
+    {
+        Idle,
+        Walk,
+        Jump,
+        Attack,
+        Fall,
+        Hurt,
+        Die
+    }
 
+    private readonly int _idleAnimState = Animator.StringToHash("Player_Idle");
+    private readonly int _runAnimState = Animator.StringToHash("Player_Run");
+    private readonly int _jumpAnimState = Animator.StringToHash("Player_Jump");
+    private readonly int _attackAnimState = Animator.StringToHash("Player_Attack");
+    private readonly int _fallAnimState = Animator.StringToHash("Player_Fall");
+    private readonly int _hitAnimState = Animator.StringToHash("Player_Hit");
+    private readonly int _deathAnimState = Animator.StringToHash("Player_Death");
 
-    
-    
+    [SerializeField] Collider2D _terrainCollider;
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private float _floorLevel;
     private Animator _anim;
 
     private bool _canAttack;
-    
+    private bool _isDead;
+
+    [SerializeField] Health _health;
+
     [SerializeField] private CharacterState _state;
 
     private void Awake()
     {
         _currentHealthPoints = maxHealthPoints;
+        
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponentInChildren<Animator>();
+        //_health = GetComponent<Health>();
         _rb.gravityScale = 0;
 
         _floorLevel = float.MinValue;
@@ -56,19 +67,20 @@ public class PlayerBeatController : CharacterBeatController
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
-        
+
         if (_state == CharacterState.Idle || _state == CharacterState.Walk)
         {
             if (_movement == Vector2.zero && _state != CharacterState.Idle)
             {
                 _state = CharacterState.Idle;
-                _anim.CrossFadeInFixedTime(IdleAnimState, 0.2f);
+                _anim.CrossFadeInFixedTime(_idleAnimState, 0.2f);
             }
             else if (_movement != Vector2.zero && _state != CharacterState.Walk)
             {
                 _state = CharacterState.Walk;
-                _anim.CrossFadeInFixedTime(RunAnimState, 0.2f);
+                _anim.CrossFadeInFixedTime(_runAnimState, 0.2f);
             }
+
             _rb.velocity = _movement;
         }
         else
@@ -81,31 +93,32 @@ public class PlayerBeatController : CharacterBeatController
     {
         if (_state == CharacterState.Walk || _state == CharacterState.Idle)
         {
+            _terrainCollider.enabled = false;
             _state = CharacterState.Jump;
             _rb.gravityScale = 1;
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
             _floorLevel = transform.position.y - 0.0000001f;
-            _anim.CrossFadeInFixedTime(JumpAnimState, 0.2f);
+            _anim.CrossFadeInFixedTime(_jumpAnimState, 0.2f);
         }
     }
 
     public void Attack()
     {
         Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
-        
+
         if (_state == CharacterState.Walk || _state == CharacterState.Idle && _canAttack)
         {
             _canAttack = false;
             _state = CharacterState.Attack;
             _rb.velocity = Vector2.zero;
-            _anim.CrossFadeInFixedTime(AttackAnimState, 0.2f);
+            _anim.CrossFadeInFixedTime(_attackAnimState, 0.2f);
 
             //var results = new Collider2D[] { };
             var size = Physics2D.OverlapBoxNonAlloc(hitAnchor.position, hitSize, 0, results);
 
-            for (int i = 0; i < results.Length; i++)
+            foreach (var result in results)
             {
-                results[i].GetComponent<ITriggerEnter>()?.HitByPlayer(gameObject);
+                result.GetComponent<ITriggerEnter>()?.HitByPlayer(gameObject);
             }
 
             StartCoroutine(WaitForAttackAnimationToEnd(_anim.GetCurrentAnimatorStateInfo(0)));
@@ -114,22 +127,24 @@ public class PlayerBeatController : CharacterBeatController
 
     private IEnumerator WaitForAttackAnimationToEnd(AnimatorStateInfo stateInfo)
     {
-        while (stateInfo.shortNameHash != AttackAnimState)
+        while (stateInfo.shortNameHash != _attackAnimState)
         {
             yield return null;
             stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
         }
+
         while (stateInfo.normalizedTime < 1f)
         {
             yield return null;
             stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
         }
+
         _state = CharacterState.Idle;
-        _anim.CrossFadeInFixedTime(IdleAnimState, 0f);
+        _anim.CrossFadeInFixedTime(_idleAnimState, 0f);
         _canAttack = true;
     }
 
-    public void TakeDamage(float damageTaken)
+    public void TakeHit(float damageTaken)
     {
         if (_state == CharacterState.Attack) return;
         Debug.Log("Taking damage with: " + damageTaken + " damage");
@@ -137,33 +152,51 @@ public class PlayerBeatController : CharacterBeatController
         {
             Ground();
         }
-        
-        _currentHealthPoints -= (int)damageTaken;
-        _anim.CrossFadeInFixedTime(HitAnimState, 0f);
 
-        if (_currentHealthPoints <= 0)
+        //_currentHealthPoints -= (int)damageTaken;
+        _health.TakeDamage(damageTaken);
+
+        if (_health.currentHealth <= 0)
         {
             _currentHealthPoints = 0;
             _state = CharacterState.Die;
-            _anim.CrossFadeInFixedTime(DeathAnimState, 0f);
+            _isDead = true;
+            StartCoroutine(HitAndDie());
+            
         }
         else
         {
-            _anim.CrossFadeInFixedTime(HitAnimState, 0f);
+            _anim.CrossFadeInFixedTime(_hitAnimState, 0f);
             _state = CharacterState.Hurt;
             _rb.velocity = Vector2.zero;
+            StartCoroutine(RecoverFromHit());
         }
-        
+    }
+    
+    private IEnumerator HitAndDie()
+    {
+        _anim.CrossFadeInFixedTime(_hitAnimState, 0f);
+        float animCrossFaid = 0.4f;
+        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length - animCrossFaid);
+        _anim.CrossFadeInFixedTime(_deathAnimState, animCrossFaid);
+    }
+
+    private IEnumerator RecoverFromHit()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _state = CharacterState.Idle;
+        _anim.CrossFadeInFixedTime(_idleAnimState, 0.2f);
     }
 
     private void Ground()
     {
+        _terrainCollider.enabled = true;
         _state = CharacterState.Idle;
         _rb.gravityScale = 0;
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
         transform.position = new Vector3(transform.position.x, _floorLevel);
         _floorLevel = float.MinValue;
-        _anim.CrossFadeInFixedTime(IdleAnimState, 0.2f);
+        _anim.CrossFadeInFixedTime(_idleAnimState, 0.2f);
     }
 
     private void Update()
@@ -180,7 +213,7 @@ public class PlayerBeatController : CharacterBeatController
             if (_rb.velocity.y < 0)
             {
                 _state = CharacterState.Fall;
-                _anim.CrossFadeInFixedTime(FallAnimState, 0.2f);
+                _anim.CrossFadeInFixedTime(_fallAnimState, 0.2f);
             }
         }
     }

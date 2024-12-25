@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3298196565337546200}
   - component: {fileID: 4081270068149523314}
   - component: {fileID: 7303374409250056314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObjectAestetics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1927562193435409472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7417286309096652598}
   - component: {fileID: 7741859319291279832}
   - component: {fileID: 9106798083540153134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DestructibleStoneWHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,6 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb16d39f614fc042955b27f5e33dc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrop: {fileID: 8669442835050991355, guid: 8c6dfb98fb461ea41b9e6603f76aff40, type: 3}
+  itemDrop: {fileID: 3968613492820878350, guid: da857cb906bb73f479ebeb39baf3ca39, type: 3}
   dropSite: {fileID: 1927562193435409472}
   coinAnimator: {fileID: 7303374409250056314}

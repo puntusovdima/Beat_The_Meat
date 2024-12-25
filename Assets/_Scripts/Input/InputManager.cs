@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
 
-    private TestInpuActions _inputActions;
+    private TestInputActions _inputActions;
 
     //Aquí ponemos todas las acciones puntuales que vaya a usar nuestra aplicación
     public Action JumpPerformed,
@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        _inputActions = new TestInpuActions();
+        _inputActions = new TestInputActions();
         _inputActions.Player.Enable();
     }
 

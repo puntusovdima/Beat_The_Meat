@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateScore(float score)
     {
-        scoreText.text = $"Score: {score:0000}";
+        if (scoreText != null)
+            scoreText.text = $"Score: {score:0000}";
     }
 }

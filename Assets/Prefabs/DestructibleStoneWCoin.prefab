@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3298196565337546200}
   - component: {fileID: 4081270068149523314}
   - component: {fileID: 7303374409250056314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObjectAestetics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1927562193435409472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7417286309096652598}
   - component: {fileID: 7741859319291279832}
   - component: {fileID: 9106798083540153134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DestructibleStoneWCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

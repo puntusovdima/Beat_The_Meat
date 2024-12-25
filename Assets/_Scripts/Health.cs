@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -9,18 +10,18 @@ public class Health : MonoBehaviour
         
     private float _currentHealthInverse;
         
-    [SerializeField] int _currentHealth;
+    [SerializeField] public float currentHealth;
 
     protected void Start()
     {
-        _currentHealth = maxHealth;
-        _currentHealthInverse = 1f / _currentHealth;
+        currentHealth = maxHealth;
+        _currentHealthInverse = 1f / currentHealth;
     }
     
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        _currentHealth -= damage;
+        currentHealth -= damage;
 
         CheckDeath();
 
@@ -29,7 +30,7 @@ public class Health : MonoBehaviour
 
     public void Heal(int heal)
     {
-        _currentHealth += heal;
+        currentHealth += heal;
         
         CheckHealth();
 
@@ -38,22 +39,22 @@ public class Health : MonoBehaviour
 
     protected void UpdateHealthBar()
     {
-        healthBar.fillAmount = _currentHealth * _currentHealthInverse;
+        healthBar.fillAmount = currentHealth * _currentHealthInverse;
     }
 
     protected void CheckHealth()
     {
-        if (_currentHealth <= maxHealth) return;
+        if (currentHealth <= maxHealth) return;
         
-        _currentHealth = maxHealth;
+        currentHealth = maxHealth;
         
     }
 
     protected void CheckDeath()
     {
-        if (_currentHealth > 0) return;
+        if (currentHealth > 0) return;
         
-        _currentHealth = 0;
+        currentHealth = 0;
 
         Death();
     }

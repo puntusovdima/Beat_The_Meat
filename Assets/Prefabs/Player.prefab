@@ -196,7 +196,6 @@ GameObject:
   - component: {fileID: 909511104154559411}
   - component: {fileID: 5548988162518526739}
   - component: {fileID: 8427919006756431097}
-  - component: {fileID: 5587963705900575037}
   - component: {fileID: 2893692577938116931}
   m_Layer: 0
   m_Name: Player
@@ -244,6 +243,7 @@ MonoBehaviour:
   hitAnchor: {fileID: 7586846905561715661}
   bottomAnchor: {fileID: 8885140935923265860}
   hitSize: {x: 1, y: 1.54}
+  _health: {fileID: 2893692577938116931}
   _state: 0
 --- !u!114 &909511104154559411
 MonoBehaviour:
@@ -320,26 +320,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.08722967, y: 0.8097049}
   m_Size: {x: 0.6415235, y: 1.5134714}
   m_Direction: 0
---- !u!114 &5587963705900575037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7114299869744011908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa8f2d27fef3a141a66e4d0d1dee681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 1
-  speedY: 1
-  jumpForce: 0
-  damage: 10
-  maxHealthPoints: 100
-  hitAnchor: {fileID: 7586846905561715661}
-  bottomAnchor: {fileID: 7887764199696719236}
-  hitSize: {x: 0, y: 0}
 --- !u!114 &2893692577938116931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 0}
-  _currentHealth: 0
+  currentHealth: 0
 --- !u!1 &8309531864156460346
 GameObject:
   m_ObjectHideFlags: 0
