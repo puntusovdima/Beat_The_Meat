@@ -9,10 +9,13 @@ public class CharacterBeatController : MonoBehaviour
     [SerializeField] protected Transform hitAnchor, bottomAnchor;
     [SerializeField] protected Vector2 hitSize;
     
+    [SerializeField] private bool showGizmos = true;
+    
     protected int _currentHealthPoints;
     
     private void OnDrawGizmos()
     {
+        if (showGizmos == false) return;
         Gizmos.color = Color.red;
         Gizmos.DrawCube(hitAnchor.position, hitSize);
         Gizmos.color = Color.yellow;

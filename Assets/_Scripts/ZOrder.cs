@@ -11,7 +11,7 @@ public class ZOrder : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        terrainCollider = GameObject.Find("TerrainCollider").GetComponent<Collider2D>();
+       // terrainCollider = GameObject.Find("TerrainCollider").GetComponent<Collider2D>();
     }
 
     private void Update()

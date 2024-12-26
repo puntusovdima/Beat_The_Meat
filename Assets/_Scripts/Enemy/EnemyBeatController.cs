@@ -14,7 +14,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     
     // AI detection stuff
     [SerializeField]
-    private float detectionDelay = 0.05f, aiUpdateDelay = 0.06f, attackDelay = 1f;
+    private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f, attackDelay = 1f;
     [SerializeField] private AIData _aiData;
     [SerializeField] private List<SteeringBehaviour> _steeringBehaviours;
     [SerializeField] List<Detector> _detectors;
@@ -128,11 +128,6 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         Debug.Log("Enemy is chasing");
         if (!_target || _state == CharacterState.Hurt) return;
 
-        // if (_aiData.currentTarget == null)
-        // {
-        //     _state = CharacterState.Idle;
-        //     return;
-        // }
         
         _movement = _movementDirectionSolver.GetDirectionToMove(_steeringBehaviours, _aiData);
         if (_movement == Vector2.zero)
@@ -150,8 +145,8 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-    
-        _anim.CrossFade(_runAnimState, 0.1f);
+        _anim.Play(_runAnimState);
+        //_anim.CrossFade(_runAnimState, 0.1f);
     }
     
 

@@ -7,6 +7,6 @@ public class AIData : MonoBehaviour
     public Collider2D[] obstacles = null;
 
     public Transform currentTarget;
-    
+
     public int GetTargetsCount() => targets == null ? 0 : targets.Count;
 }
