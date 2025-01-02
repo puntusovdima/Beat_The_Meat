@@ -8,6 +8,9 @@ public class ZOrder : MonoBehaviour
     
     [SerializeField] private Collider2D terrainCollider;
 
+    [SerializeField]
+    private int layerOrder;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -16,15 +19,19 @@ public class ZOrder : MonoBehaviour
 
     private void Update()
     {
-        if (terrainCollider.isActiveAndEnabled == false) return;
-        if (anchor)
+        if (!terrainCollider || terrainCollider.isActiveAndEnabled)
         {
-            spriteRenderer.sortingOrder = (int)(anchor.position.y * -10);
+            if (anchor)
+            {
+                layerOrder  = (int)(anchor.position.y * -10);
+            }
+            else
+            {
+                layerOrder = (int)(transform.position.y * -10);
+            }
+
+            spriteRenderer.sortingOrder = layerOrder;
         }
-        else
-        {
-            spriteRenderer.sortingOrder = (int)(transform.position.y * -10);
-        }
-        
+        else if (terrainCollider.isActiveAndEnabled == false) return;
     }
 }
