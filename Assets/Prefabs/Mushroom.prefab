@@ -224,8 +224,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000432180484974900}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2400002, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -785,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1800255992297026342
 Transform:
   m_ObjectHideFlags: 0
@@ -839,32 +839,20 @@ MonoBehaviour:
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
   attackDelay: 1
-  _aiData: {fileID: 1474483462751897171}
-  _steeringBehaviours:
-  - {fileID: 3572650190068635891}
+  aiData: {fileID: 1474483462751897171}
+  steeringBehaviours:
   - {fileID: 3567843634037727396}
-  _detectors:
-  - {fileID: 6557240806929462401}
+  - {fileID: 3572650190068635891}
+  detectors:
   - {fileID: 3867832181442692547}
+  - {fileID: 6557240806929462401}
   movementInput: {x: 0, y: 0}
-  _movementDirectionSolver: {fileID: 8750533574441462212}
-  _player: {fileID: 0}
-  _enemyHealth: {fileID: 5170023635712237097}
-  EnemyHit:
+  movementDirectionSolver: {fileID: 8750533574441462212}
+  target: {fileID: 0}
+  enemyHealth: {fileID: 5170023635712237097}
+  enemyHit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6319992766521250951}
-        m_TargetAssemblyTypeName: KnockbackFeedback, Assembly-CSharp
-        m_MethodName: PlayFeedback
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!70 &6596872594267716664
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1023,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d32cdd628e4b9348af51fad6897477f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRechedThreshold: 0.5
+  targetReachedThreshold: 0.5
   showGizmo: 1
 --- !u!1 &9074483209611137692
 GameObject:

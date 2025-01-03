@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Terrain
+  - TerrainCollider
   - Player
   - Obstacle
   - Enemy
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Tilemap
+    uniqueID: 3878969805
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
