@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6497427144902267432}
   - component: {fileID: 8020370413697215996}
   - component: {fileID: 4805233037210609555}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: LifeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4179613800505201281}
   - component: {fileID: 3371292901517137433}
   - component: {fileID: 666660516280227142}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Aesthetics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -7008412969330441016, guid: ce3326307819d6e4497038e63e070108, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -189,15 +189,93 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824099447407586374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd72f951cd5038541961dafea02bcaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 706334427550367753}
   spriteRenderer: {fileID: 3371292901517137433}
+  canvas: {fileID: 0}
   terrainCollider: {fileID: 0}
   layerOrder: 0
+--- !u!1 &883639897027084075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027427198948872572}
+  - component: {fileID: 2285546802748293199}
+  m_Layer: 11
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027427198948872572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883639897027084075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800255992297026342}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2285546802748293199
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883639897027084075}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.16}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.66}
+  m_EdgeRadius: 0
 --- !u!1 &3002696224379389417
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4300515615817823778}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SteeringBehaviours
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2937194464902453137}
   - component: {fileID: 3572650190068635891}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ObstacleAvoidance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62433400941719143}
   - component: {fileID: 8750533574441462212}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ContextSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920996065351102570}
   - component: {fileID: 2099873538353421827}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: TerrainCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6384768853467041532}
   - component: {fileID: 6557240806929462401}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ObstacleDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +526,7 @@ MonoBehaviour:
   detectionRadius: 2
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   showGizmos: 1
 --- !u!1 &6014763751305708015
 GameObject:
@@ -460,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036043244556340707}
   - component: {fileID: 3867832181442692547}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,14 +572,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971f6494c4f342345ad663bcaad11516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDetectionRange: 5
+  targetDetectionRange: 6
   obstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  showGizmos: 1
+  showGizmos: 0
 --- !u!1 &6468950462255349977
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +592,8 @@ GameObject:
   - component: {fileID: 6297840520717843499}
   - component: {fileID: 6521386478097374847}
   - component: {fileID: 5936103805530028918}
-  m_Layer: 9
+  - component: {fileID: 4942174059318746658}
+  m_Layer: 10
   m_Name: LifeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,6 +683,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4942174059318746658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468950462255349977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72f951cd5038541961dafea02bcaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchor: {fileID: 706334427550367753}
+  spriteRenderer: {fileID: 0}
+  canvas: {fileID: 6297840520717843499}
+  terrainCollider: {fileID: 0}
+  layerOrder: 0
 --- !u!1 &6494073717921068750
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706334427550367753}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6520173790626512679}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Detectors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +778,8 @@ GameObject:
   - component: {fileID: 4047715909247948631}
   - component: {fileID: 5170023635712237097}
   - component: {fileID: 1474483462751897171}
-  m_Layer: 9
+  - component: {fileID: 803909039741977292}
+  m_Layer: 10
   m_Name: FlyingEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,6 +806,7 @@ Transform:
   - {fileID: 6355249156711911468}
   - {fileID: 6520173790626512679}
   - {fileID: 4300515615817823778}
+  - {fileID: 1027427198948872572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9187291073656647115
@@ -723,8 +821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0870895d55e2e284383f01cc6b08505b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 2
-  speedY: 2
+  speedX: 3
+  speedY: 3
   jumpForce: 0
   damage: 5
   maxHealthPoints: 30
@@ -732,6 +830,9 @@ MonoBehaviour:
   bottomAnchor: {fileID: 706334427550367753}
   hitSize: {x: 0.5, y: 1}
   showGizmos: 1
+  hitLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   minTimeBeforeAttack: 0
   minDistanceToAttack: 0
   maxTimeBeforeAttack: 0
@@ -749,6 +850,21 @@ MonoBehaviour:
   _movementDirectionSolver: {fileID: 8750533574441462212}
   _player: {fileID: 0}
   _enemyHealth: {fileID: 5170023635712237097}
+  EnemyHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 803909039741977292}
+        m_TargetAssemblyTypeName: KnockbackFeedback, Assembly-CSharp
+        m_MethodName: PlayFeedback
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!70 &6596872594267716664
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -781,7 +897,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.27}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.56, y: 0.38}
   m_Direction: 1
 --- !u!50 &4047715909247948631
@@ -842,6 +958,27 @@ MonoBehaviour:
   targets: []
   obstacles: []
   currentTarget: {fileID: 0}
+--- !u!114 &803909039741977292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989265335114343550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a30d6a661b5e344be373873fbd534e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4047715909247948631}
+  knockbackForce: 10
+  delay: 0.15
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9052357211864011606
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,7 +989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3227693198015612662}
   - component: {fileID: 3567843634037727396}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SeekBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +1034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1149965840714958859}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: HitAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

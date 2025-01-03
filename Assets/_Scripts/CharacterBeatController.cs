@@ -11,6 +11,8 @@ public class CharacterBeatController : MonoBehaviour
     
     [SerializeField] private bool showGizmos = true;
     
+    [SerializeField] protected LayerMask hitLayerMask;
+    
     protected int _currentHealthPoints;
     
     private void OnDrawGizmos()

@@ -5,6 +5,7 @@ public class ZOrder : MonoBehaviour
     [SerializeField] private Transform anchor;
     
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Canvas canvas;
     
     [SerializeField] private Collider2D terrainCollider;
 
@@ -30,7 +31,14 @@ public class ZOrder : MonoBehaviour
                 layerOrder = (int)(transform.position.y * -10);
             }
 
-            spriteRenderer.sortingOrder = layerOrder;
+            if (spriteRenderer)
+            {
+                spriteRenderer.sortingOrder = layerOrder;
+            }
+            else if (canvas)
+            {
+                canvas.sortingOrder = layerOrder;
+            }
         }
         else if (terrainCollider.isActiveAndEnabled == false) return;
     }

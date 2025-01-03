@@ -196,8 +196,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchor: {fileID: 706334427550367753}
   spriteRenderer: {fileID: 3371292901517137433}
+  canvas: {fileID: 0}
   terrainCollider: {fileID: 0}
   layerOrder: 0
+--- !u!1 &3000432180484974900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3805490997382086668}
+  - component: {fileID: 7067895004170128624}
+  m_Layer: 11
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3805490997382086668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000432180484974900}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2400002, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800255992297026342}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7067895004170128624
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000432180484974900}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.9}
+  m_EdgeRadius: 0
 --- !u!1 &3002696224379389417
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,14 +572,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971f6494c4f342345ad663bcaad11516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDetectionRange: 5
+  targetDetectionRange: 6
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 256
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  showGizmos: 1
+  showGizmos: 0
 --- !u!1 &6468950462255349977
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +592,7 @@ GameObject:
   - component: {fileID: 6297840520717843499}
   - component: {fileID: 6521386478097374847}
   - component: {fileID: 5936103805530028918}
+  - component: {fileID: 3434327465618999921}
   m_Layer: 9
   m_Name: LifeCanvas
   m_TagString: Untagged
@@ -538,7 +617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.22}
+  m_AnchoredPosition: {x: 0, y: 0.84}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6297840520717843499
@@ -604,6 +683,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3434327465618999921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468950462255349977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72f951cd5038541961dafea02bcaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchor: {fileID: 706334427550367753}
+  spriteRenderer: {fileID: 0}
+  canvas: {fileID: 6297840520717843499}
+  terrainCollider: {fileID: 0}
+  layerOrder: 0
 --- !u!1 &6494073717921068750
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +778,7 @@ GameObject:
   - component: {fileID: 4047715909247948631}
   - component: {fileID: 5170023635712237097}
   - component: {fileID: 1474483462751897171}
+  - component: {fileID: 6319992766521250951}
   m_Layer: 9
   m_Name: Mushroom
   m_TagString: Untagged
@@ -709,6 +806,7 @@ Transform:
   - {fileID: 6355249156711911468}
   - {fileID: 6520173790626512679}
   - {fileID: 4300515615817823778}
+  - {fileID: 3805490997382086668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9187291073656647115
@@ -732,6 +830,9 @@ MonoBehaviour:
   bottomAnchor: {fileID: 706334427550367753}
   hitSize: {x: 0.5, y: 1}
   showGizmos: 1
+  hitLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   minTimeBeforeAttack: 0
   minDistanceToAttack: 0
   maxTimeBeforeAttack: 0
@@ -749,6 +850,21 @@ MonoBehaviour:
   _movementDirectionSolver: {fileID: 8750533574441462212}
   _player: {fileID: 0}
   _enemyHealth: {fileID: 5170023635712237097}
+  EnemyHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6319992766521250951}
+        m_TargetAssemblyTypeName: KnockbackFeedback, Assembly-CSharp
+        m_MethodName: PlayFeedback
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!70 &6596872594267716664
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -842,6 +958,27 @@ MonoBehaviour:
   targets: []
   obstacles: []
   currentTarget: {fileID: 0}
+--- !u!114 &6319992766521250951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989265335114343550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a30d6a661b5e344be373873fbd534e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4047715909247948631}
+  knockbackForce: 10
+  delay: 0.15
+  onBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  onDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9052357211864011606
 GameObject:
   m_ObjectHideFlags: 0

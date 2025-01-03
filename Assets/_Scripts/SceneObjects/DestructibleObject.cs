@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,6 +17,11 @@ public class DestructibleObject : MonoBehaviour, ITriggerEnter
     {
         onHit.Invoke();
         StartCoroutine(GetTheBonus());
+    }
+
+    public void HitByEnemy(GameObject enemy)
+    {
+        throw new NotImplementedException();
     }
 
     private IEnumerator GetTheBonus()
