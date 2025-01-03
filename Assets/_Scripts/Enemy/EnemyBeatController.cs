@@ -144,7 +144,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         _anim.Play(_attackAnimState1);
         foreach (Collider2D result in results)
         {
-            if ((1 << result.gameObject.layer) == LayerMask.NameToLayer("Player"))
+            if ((1 << result.gameObject.layer) == hitLayerMask.value)
             {
                 result.GetComponent<ITriggerEnter>()?.HitByEnemy(gameObject);
             }
