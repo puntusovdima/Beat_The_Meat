@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class SeekBehaviour : SteeringBehaviour
 {
     [SerializeField]
-    private float targetRechedThreshold = 0.5f;
+    private float targetReachedThreshold = 0.5f;
 
     [SerializeField]
     private bool showGizmo = true;
@@ -42,14 +40,14 @@ public class SeekBehaviour : SteeringBehaviour
             targetPositionCached = aiData.currentTarget.position;
 
         //First check if we have reached the target
-        if (Vector2.Distance(transform.position, targetPositionCached) < targetRechedThreshold)
+        if (Vector2.Distance(transform.position, targetPositionCached) < targetReachedThreshold)
         {
             reachedLastTarget = true;
             aiData.currentTarget = null;
             return (danger, interest);
         }
 
-        //If we havent yet reached the target do the main logic of finding the interest directions
+        //If we haven't yet reached the target do the main logic of finding the interest directions
         Vector2 directionToTarget = (targetPositionCached - (Vector2)transform.position);
         for (int i = 0; i < interest.Length; i++)
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 
 public class EnemyBeatController : CharacterBeatController, ITriggerEnter 
@@ -10,25 +11,25 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     // later attack delay should be randomly chosen(or clamped) between minTimeBeforeAttack and maxTimeBeforeAttack
     [SerializeField] private float minTimeBeforeAttack, minDistanceToAttack, maxTimeBeforeAttack;
-    
+    // [SerializeField] private Transform attackPoint;
     // AI detection stuff
     [SerializeField]
     private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f, attackDelay = 1f;
-    [SerializeField] private AIData _aiData;
-    [SerializeField] private List<SteeringBehaviour> _steeringBehaviours;
-    [SerializeField] List<Detector> _detectors;
-    private float attackDistance = 0.5f;
+    [SerializeField] private AIData aiData;
+    [SerializeField] private List<SteeringBehaviour> steeringBehaviours;
+    [SerializeField] List<Detector> detectors;
+    // private float attackDistance = 0.5f;
 
     [SerializeField] private Vector2 movementInput;
     
-    [SerializeField] ContextSolver _movementDirectionSolver;
+    [SerializeField] private ContextSolver movementDirectionSolver;
 
     
     private CharacterState _state;
     
     private readonly int _idleAnimState = Animator.StringToHash("Enemy_Idle");
     private readonly int _runAnimState = Animator.StringToHash("Enemy_Run");
-    private readonly int _attackAnimState = Animator.StringToHash("Enemy_Attack");
+    private readonly int _attackAnimState1 = Animator.StringToHash("Enemy_Attack1");
     private readonly int _fallAnimState = Animator.StringToHash("Enemy_Fall");
     private readonly int _hitAnimState = Animator.StringToHash("Enemy_Hit");
     private readonly int _deathAnimState = Animator.StringToHash("Enemy_Death");
@@ -37,12 +38,12 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private Animator _anim;
-    private Transform _target;
-    [SerializeField] private Transform _player;
-    [SerializeField] EnemyHealth _enemyHealth;
-    private bool _canAttack;
+    [SerializeField] Transform target;
+    // [SerializeField] private Transform _player;
+    [SerializeField] EnemyHealth enemyHealth;
+    private bool _canAttack = true;
 
-    public UnityEvent EnemyHit;
+    public UnityEvent enemyHit;
     
 
     
@@ -55,10 +56,16 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     }
     public void HitByPlayer(GameObject player)
     {
-        EnemyHit.Invoke();
+        enemyHit.Invoke();
         //_enemyHealth.TakeDamage(player.GetComponent<PlayerBeatController>().damage);
         TakeHit(player.GetComponent<PlayerBeatController>().damage);
         Debug.Log("Enemy was hit by player");
+    }
+
+    public void HitByEnemy(GameObject enemy)
+    {
+        // throw new System.NotImplementedException();
+        Debug.Log("Am I hitting myself?(Enemy)");
     }
 
     private void Awake()
@@ -69,7 +76,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         _state = CharacterState.Chase;
         //_floorLevel = float.MinValue;
         _canAttack = true;
-        _target = _player;
+        // _target = _player;
     }
     
     private void Start()
@@ -79,9 +86,9 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
      }
     private void PerformDetection()
     {
-        foreach (Detector detector in _detectors)
+        foreach (Detector detector in detectors)
         {
-            detector.Detect(_aiData);
+            detector.Detect(aiData);
         }
     }
     
@@ -96,13 +103,13 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
                 Chase();
                 break;
             case CharacterState.Attack:
-                //Attack();
+                Attack();
                 break;
             case CharacterState.Hurt:
                 //Hurt();
                 break;
             case CharacterState.WaitToAttack:
-               // WaitToAttack();
+               WaitToAttack();
                 break;
             case CharacterState.Death:
                // Death();
@@ -111,6 +118,58 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
                 Knockback();
                 break;
         }
+    }
+
+    private void WaitToAttack()
+    {
+        Debug.Log("Enemy is waiting to attack");
+        _state = CharacterState.Attack;
+        StartCoroutine(AttackWithDelay());
+    }
+    
+    private IEnumerator AttackWithDelay()
+    {
+        yield return new WaitForSeconds(Random.Range(minTimeBeforeAttack, maxTimeBeforeAttack));
+        Attack();
+    }
+
+    private void Attack()
+    {
+        if (!_canAttack) return;
+        Debug.Log("Enemy is attacking player");
+        Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
+        _canAttack = false;
+        _rb.velocity = Vector2.zero;
+        // _anim.CrossFadeInFixedTime(_attackAnimState, 0.2f);
+        _anim.Play(_attackAnimState1);
+        foreach (Collider2D result in results)
+        {
+            if ((1 << result.gameObject.layer) == LayerMask.NameToLayer("Player"))
+            {
+                result.GetComponent<ITriggerEnter>()?.HitByEnemy(gameObject);
+            }
+            Debug.Log("Result: " + result.gameObject.name);
+        }
+
+        StartCoroutine(WaitForAttackAnimationToEnd(_anim.GetCurrentAnimatorStateInfo(0)));
+    }
+
+    private IEnumerator WaitForAttackAnimationToEnd(AnimatorStateInfo stateInfo)
+    {
+        while (stateInfo.shortNameHash != _attackAnimState1)
+        {
+            yield return null;
+            stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
+        }
+
+        while (stateInfo.normalizedTime < 1f)
+        {
+            yield return null;
+            stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
+        }
+        _canAttack = true;
+        _state = CharacterState.Idle;
+        _anim.CrossFadeInFixedTime(_idleAnimState, 0f);
     }
 
     private void Knockback()
@@ -122,7 +181,11 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     private void Idle()
     {
-        if (_aiData.currentTarget || _aiData.GetTargetsCount() > 0)
+        if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
+        {
+            _state = CharacterState.Attack;
+        }
+        if (aiData.currentTarget || aiData.GetTargetsCount() > 0)
         {
             Chase();
             _state = CharacterState.Chase;
@@ -140,10 +203,10 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private void Chase()
     {
         Debug.Log("Enemy is chasing");
-        if (!_target || _state == CharacterState.Hurt) return;
+        if (!target || _state == CharacterState.Hurt) return;
 
         
-        _movement = _movementDirectionSolver.GetDirectionToMove(_steeringBehaviours, _aiData);
+        _movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
         if (_movement == Vector2.zero)
         {
             _state = CharacterState.Idle;
@@ -151,6 +214,10 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         }
         // Handle rotation and movement...
         _rb.velocity = new Vector2(_movement.x * speedX, _movement.y * speedY);
+        if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
+        {
+            _state = CharacterState.WaitToAttack;
+        }
         if (_movement.x < 0 && !Mathf.Approximately(transform.rotation.y, 180))
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -170,9 +237,9 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         if (_state == CharacterState.Attack) return;
         Debug.Log("Taking damage with: " + damageTaken + " damage");
         
-        _enemyHealth.TakeDamage(damageTaken);
+        enemyHealth.TakeDamage(damageTaken);
 
-        if (_enemyHealth.currentHealth <= 0)
+        if (enemyHealth.currentHealth <= 0)
         {
             _currentHealthPoints = 0;
             // _rb.velocity = Vector2.zero;

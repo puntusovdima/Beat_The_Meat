@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
-[RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D), typeof(PlayerBeatInput))]
-public class PlayerBeatController : CharacterBeatController
+public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 {
     private enum CharacterState
     {
@@ -23,7 +21,7 @@ public class PlayerBeatController : CharacterBeatController
     private readonly int _hitAnimState = Animator.StringToHash("Player_Hit");
     private readonly int _deathAnimState = Animator.StringToHash("Player_Death");
 
-    [SerializeField] Collider2D _terrainCollider;
+    [SerializeField] Collider2D terrainCollider;
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private float _floorLevel;
@@ -93,7 +91,7 @@ public class PlayerBeatController : CharacterBeatController
     {
         if (_state == CharacterState.Walk || _state == CharacterState.Idle)
         {
-            _terrainCollider.enabled = false;
+            terrainCollider.enabled = false;
             _state = CharacterState.Jump;
             _rb.gravityScale = 1;
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
@@ -104,10 +102,10 @@ public class PlayerBeatController : CharacterBeatController
 
     public void Attack()
     {
-        Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
 
         if (_state == CharacterState.Walk || _state == CharacterState.Idle && _canAttack)
         {
+            Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
             _canAttack = false;
             _state = CharacterState.Attack;
             _rb.velocity = Vector2.zero;
@@ -118,7 +116,9 @@ public class PlayerBeatController : CharacterBeatController
 
             foreach (var result in results)
             {
-                result.GetComponent<ITriggerEnter>()?.HitByPlayer(gameObject);
+                // layers are stored in an integer(4Bytes) 00000000 00000000 00001000 00000000
+                if ((1 << result.gameObject.layer) == hitLayerMask.value)
+                    result.GetComponentInParent<ITriggerEnter>()?.HitByPlayer(gameObject);
             }
 
             StartCoroutine(WaitForAttackAnimationToEnd(_anim.GetCurrentAnimatorStateInfo(0)));
@@ -147,7 +147,7 @@ public class PlayerBeatController : CharacterBeatController
     public void TakeHit(float damageTaken)
     {
         if (_state == CharacterState.Attack) return;
-        Debug.Log("Taking damage with: " + damageTaken + " damage");
+        Debug.Log("Taking damage with: " + damageTaken + " damage(Player)");
         if (_state == CharacterState.Fall || _state == CharacterState.Jump)
         {
             Ground();
@@ -190,7 +190,7 @@ public class PlayerBeatController : CharacterBeatController
 
     private void Ground()
     {
-        _terrainCollider.enabled = true;
+        terrainCollider.enabled = true;
         _state = CharacterState.Idle;
         _rb.gravityScale = 0;
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
@@ -216,5 +216,16 @@ public class PlayerBeatController : CharacterBeatController
                 _anim.CrossFadeInFixedTime(_fallAnimState, 0.2f);
             }
         }
+    }
+
+    public void HitByPlayer(GameObject player)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void HitByEnemy(GameObject enemy)
+    {
+        Debug.Log("Player is hit by enemy");
+        TakeHit(enemy.GetComponent<EnemyBeatController>().damage);
     }
 }

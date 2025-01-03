@@ -20,6 +20,11 @@ public class PickUp : MonoBehaviour, ITriggerEnter
         ApplyPickUp();
     }
 
+    public void HitByEnemy(GameObject enemy)
+    {
+        Destroy(gameObject);
+    }
+
     protected virtual void ApplyPickUp()
     {
         FinishApplyPickUp();
