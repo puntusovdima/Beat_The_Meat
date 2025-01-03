@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class EnemyBeatController : CharacterBeatController, ITriggerEnter 
@@ -12,7 +13,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     // [SerializeField] private Transform attackPoint;
     // AI detection stuff
     [SerializeField]
-    private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f, attackDelay = 1f;
+    private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f, attackDelay = 0.5f;
     [SerializeField] private AIData aiData;
     [SerializeField] private List<SteeringBehaviour> steeringBehaviours;
     [SerializeField] List<Detector> detectors;
@@ -40,7 +41,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     [SerializeField] EnemyHealth enemyHealth;
     private bool _canAttack = true;
 
-    // public UnityEvent enemyHit;
+    public UnityEvent enemyHit;
 
     private void Awake()
     {
@@ -102,7 +103,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     }
     public void HitByPlayer(GameObject player)
     {
-        // enemyHit.Invoke();
+        enemyHit.Invoke();
         TakeHit(player.GetComponent<PlayerBeatController>().damage);
         Debug.Log(gameObject.name + " was hit by player");
     }
@@ -175,7 +176,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     private IEnumerator HitWithDelay(Collider2D result)
     {
-        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length );
         // we apply hit to the player if he is withing the hit range after the animation is played
         if (Vector2.Distance(hitAnchor.position, target.position) <= (hitSize.y * 0.67f))
         {
@@ -203,9 +204,11 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
             yield return null;
             stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
         }
-        _canAttack = true;
+
         _state = CharacterState.Idle;
         _anim.CrossFadeInFixedTime(_idleAnimState, 0f);
+        yield return new WaitForSeconds(attackDelay);
+        _canAttack = true;
     }
 
     private void Knockback()
@@ -217,12 +220,12 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     private void Idle()
     {
-        if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
-        {
-            _state = CharacterState.Attack;
-            return;
-            // WaitToAttack();
-        }
+        // if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
+        // {
+        //     _state = CharacterState.Attack;
+        //     return;
+        //     // WaitToAttack();
+        // }
         if (aiData.currentTarget || aiData.GetTargetsCount() > 0)
         {
             _state = CharacterState.Chase;
@@ -242,7 +245,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     {
         if (!target || _state == CharacterState.Hurt) return;
         Debug.Log(gameObject.name + " is chasing");
-        if (Vector2.Distance(hitAnchor.position, target.position) < minDistanceToAttack)
+        if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
         {
             _movement = Vector2.zero;
             _state = CharacterState.WaitToAttack;

@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 3002696224379389417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.236, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -428,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 5671713479393724220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.607, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 6014763751305708015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0.233, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -756,11 +756,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   minTimeBeforeAttack: 0.2
-  minDistanceToAttack: 0.7
+  minDistanceToAttack: 0.9
   maxTimeBeforeAttack: 0.8
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
-  attackDelay: 1
+  attackDelay: 0.3
   aiData: {fileID: 1474483462751897171}
   steeringBehaviours:
   - {fileID: 3572650190068635891}
@@ -772,6 +772,21 @@ MonoBehaviour:
   movementDirectionSolver: {fileID: 8750533574441462212}
   target: {fileID: 0}
   enemyHealth: {fileID: 5170023635712237097}
+  enemyHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242735271430506127}
+        m_TargetAssemblyTypeName: KnockbackFeedback, Assembly-CSharp
+        m_MethodName: PlayFeedback
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!70 &6596872594267716664
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
