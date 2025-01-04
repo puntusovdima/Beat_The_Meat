@@ -1,21 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Coin : MonoBehaviour
+public class Coin : PickUp
 {
-    public UnityEvent coinCollected;
-    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            coinCollected?.Invoke();
-            Destroy(gameObject);
-        }
-    }
 
     public void TestMethod()
     {
         Debug.Log("Coin collected!");
+        Destroy(this.gameObject);
     }
 }

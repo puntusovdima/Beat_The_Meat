@@ -21,6 +21,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     private readonly int _hitAnimState = Animator.StringToHash("Player_Hit");
     private readonly int _deathAnimState = Animator.StringToHash("Player_Death");
 
+    [SerializeField] protected LayerMask obstacleLayerMask;
     [SerializeField] Collider2D terrainCollider;
     private Rigidbody2D _rb;
     private Vector2 _movement;
@@ -117,7 +118,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
             foreach (var result in results)
             {
                 // layers are stored in an integer(4Bytes) 00000000 00000000 00001000 00000000
-                if ((1 << result.gameObject.layer) == hitLayerMask.value)
+                // if ((1 << result.gameObject.layer) == (hitLayerMask.value | obstacleLayerMask.value))
                     result.GetComponentInParent<ITriggerEnter>()?.HitByPlayer(gameObject);
             }
 
@@ -220,7 +221,8 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 
     public void HitByPlayer(GameObject player)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Player is hitting it's collider, wtf???(change to notImplemented after fixing");
+        // throw new System.NotImplementedException();
     }
 
     public void HitByEnemy(GameObject enemy)

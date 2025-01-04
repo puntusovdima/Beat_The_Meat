@@ -5,7 +5,7 @@ public class HealthPotion : PickUp
 {
     [SerializeField] int healthRestored;
     [SerializeField] private float dissapearTime;
-    protected override void ApplyPickUp()
+    public override void ApplyPickUp()
     {
         if (_player != null)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PickUp : MonoBehaviour, ITriggerEnter
 {
@@ -6,10 +7,20 @@ public class PickUp : MonoBehaviour, ITriggerEnter
     private Collider2D _collider;
 
     protected GameObject _player;
+    public UnityEvent itemCollected;
+
     protected void Start()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            itemCollected?.Invoke();
+        }
     }
 
     public void HitByPlayer(GameObject player)
@@ -17,7 +28,8 @@ public class PickUp : MonoBehaviour, ITriggerEnter
         _spriteRenderer.enabled = false;
         _collider.enabled = false;
         _player = player;
-        ApplyPickUp();
+        // ApplyPickUp();
+        itemCollected?.Invoke();
     }
 
     public void HitByEnemy(GameObject enemy)
@@ -25,7 +37,7 @@ public class PickUp : MonoBehaviour, ITriggerEnter
         Destroy(gameObject);
     }
 
-    protected virtual void ApplyPickUp()
+    public virtual void ApplyPickUp()
     {
         FinishApplyPickUp();
     }

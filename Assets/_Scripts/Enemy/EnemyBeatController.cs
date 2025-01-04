@@ -17,13 +17,14 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     [SerializeField] private AIData aiData;
     [SerializeField] private List<SteeringBehaviour> steeringBehaviours;
     [SerializeField] List<Detector> detectors;
+    [SerializeField] Vector2 movement;
 
-    [SerializeField] private Vector2 movementInput;
+    // [SerializeField] private Vector2 movementInput;
     
     [SerializeField] private ContextSolver movementDirectionSolver;
 
     
-    private CharacterState _state;
+    [SerializeField] CharacterState _state;
     
     private readonly int _idleAnimState = Animator.StringToHash("Enemy_Idle");
     private readonly int _runAnimState = Animator.StringToHash("Enemy_Run");
@@ -34,7 +35,6 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private readonly int _blockAnimState = Animator.StringToHash("Enemy_Block");
 
     private Rigidbody2D _rb;
-    private Vector2 _movement;
     private Animator _anim;
     [SerializeField] Transform target;
     // [SerializeField] private Transform _player;
@@ -247,25 +247,25 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         Debug.Log(gameObject.name + " is chasing");
         if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
         {
-            _movement = Vector2.zero;
+            movement = Vector2.zero;
             _state = CharacterState.WaitToAttack;
             return;
         }
 
 
-        _movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
-        if (_movement == Vector2.zero)
+        movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
+        if (movement == Vector2.zero)
         {
             _state = CharacterState.Idle;
             return;
         }
         // Handle rotation and movement...
-        _rb.velocity = new Vector2(_movement.x * speedX, _movement.y * speedY);
-        if (_movement.x < 0 && !Mathf.Approximately(transform.rotation.y, 180))
+        _rb.velocity = new Vector2(movement.x * speedX, movement.y * speedY);
+        if (movement.x < 0 && !Mathf.Approximately(transform.rotation.y, 180))
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (_movement.x > 0 && !Mathf.Approximately(transform.rotation.y, 0))
+        else if (movement.x > 0 && !Mathf.Approximately(transform.rotation.y, 0))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }

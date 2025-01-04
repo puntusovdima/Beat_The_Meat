@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1921af17ccb0de4f8dc595e51c73e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCollected:
+  itemCollected:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2569365192749652388}

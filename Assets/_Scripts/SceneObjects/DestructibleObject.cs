@@ -16,12 +16,17 @@ public class DestructibleObject : MonoBehaviour, ITriggerEnter
     public void HitByPlayer(GameObject player)
     {
         onHit.Invoke();
-        StartCoroutine(GetTheBonus());
+        // StartCoroutine(GetTheBonus());
     }
 
     public void HitByEnemy(GameObject enemy)
     {
         throw new NotImplementedException();
+    }
+
+    public void AppplyItem()
+    {
+        StartCoroutine(GetTheBonus());
     }
 
     private IEnumerator GetTheBonus()
