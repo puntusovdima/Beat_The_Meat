@@ -142,6 +142,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     {
         yield return new WaitForSeconds(Random.Range(minTimeBeforeAttack, maxTimeBeforeAttack));
         _state = CharacterState.Attack;
+        Debug.Log("Attack with delay coroutine, can attack:" + _canAttack);
         // if (Vector2.Distance(hitAnchor.position, target.position) < hitSize.y * 0.67f)
         // {
         //     _state = CharacterState.Attack;
@@ -154,7 +155,12 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     private void Attack()
     {
-        if (!_canAttack || _state == CharacterState.Hurt) return;
+        // if (!_canAttack || _state == CharacterState.Hurt) return;
+        if (!_canAttack || _state == CharacterState.Hurt)
+        {
+            _state = CharacterState.Chase;
+            return;
+        }
         _canAttack = false;
         Debug.Log(gameObject.name + " is attacking player");
         Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
@@ -193,17 +199,18 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     private IEnumerator WaitForAttackAnimationToEnd(AnimatorStateInfo stateInfo)
     {
-        while (stateInfo.shortNameHash != _attackAnimState1)
-        {
-            yield return null;
-            stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
-        }
-
-        while (stateInfo.normalizedTime < 1f)
-        {
-            yield return null;
-            stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
-        }
+        // while (stateInfo.shortNameHash != _attackAnimState1)
+        // {
+        //     yield return null;
+        //     stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
+        // }
+        //
+        // while (stateInfo.normalizedTime < 1f)
+        // {
+        //     yield return null;
+        //     stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
+        // }
+        yield return new WaitForSeconds(stateInfo.length);
 
         _state = CharacterState.Idle;
         _anim.CrossFadeInFixedTime(_idleAnimState, 0f);
@@ -240,6 +247,11 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private void Hurt()
     {
         
+    }
+
+    public void ReturnToChase()
+    {
+        _state = CharacterState.Chase;
     }
     private void Chase()
     {
