@@ -168,8 +168,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1463832165
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -7008412969330441016, guid: 5f19f67e94a2e2f4ba57d2b338387c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -526,7 +526,7 @@ MonoBehaviour:
   detectionRadius: 2
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   showGizmos: 1
 --- !u!1 &6014763751305708015
 GameObject:
@@ -640,7 +640,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1463832165
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6521386478097374847
@@ -839,32 +839,20 @@ MonoBehaviour:
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
   attackDelay: 1
-  _aiData: {fileID: 1474483462751897171}
-  _steeringBehaviours:
+  aiData: {fileID: 1474483462751897171}
+  steeringBehaviours:
+  - {fileID: 0}
   - {fileID: 3572650190068635891}
-  - {fileID: 3567843634037727396}
-  _detectors:
+  detectors:
+  - {fileID: 0}
   - {fileID: 6557240806929462401}
-  - {fileID: 3867832181442692547}
   movementInput: {x: 0, y: 0}
-  _movementDirectionSolver: {fileID: 8750533574441462212}
-  _player: {fileID: 0}
-  _enemyHealth: {fileID: 5170023635712237097}
-  EnemyHit:
+  movementDirectionSolver: {fileID: 8750533574441462212}
+  target: {fileID: 0}
+  enemyHealth: {fileID: 5170023635712237097}
+  enemyHit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2084193292405870867}
-        m_TargetAssemblyTypeName: KnockbackFeedback, Assembly-CSharp
-        m_MethodName: PlayFeedback
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!70 &6596872594267716664
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1023,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d32cdd628e4b9348af51fad6897477f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRechedThreshold: 0.5
+  targetReachedThreshold: 0.5
   showGizmo: 1
 --- !u!1 &9074483209611137692
 GameObject:

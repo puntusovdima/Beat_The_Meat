@@ -18,7 +18,7 @@ TagManager:
   - Enemy
   - FlyingEnemy
   - HitBox
-  - 
+  - Ground
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 967685797
+    locked: 0
+  - name: GameComponents
+    uniqueID: 2831135131
     locked: 0
