@@ -832,19 +832,19 @@ MonoBehaviour:
   showGizmos: 1
   hitLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  minTimeBeforeAttack: 0
-  minDistanceToAttack: 0
-  maxTimeBeforeAttack: 0
+    m_Bits: 128
+  minTimeBeforeAttack: 0.5
+  minDistanceToAttack: 0.9
+  maxTimeBeforeAttack: 2
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
-  attackDelay: 1
+  attackDelay: 0.5
   aiData: {fileID: 1474483462751897171}
   steeringBehaviours:
-  - {fileID: 0}
+  - {fileID: 3567843634037727396}
   - {fileID: 3572650190068635891}
   detectors:
-  - {fileID: 0}
+  - {fileID: 3867832181442692547}
   - {fileID: 6557240806929462401}
   movementInput: {x: 0, y: 0}
   movementDirectionSolver: {fileID: 8750533574441462212}
@@ -1038,7 +1038,7 @@ Transform:
   m_GameObject: {fileID: 9074483209611137692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.697, y: 0.025, z: 0}
+  m_LocalPosition: {x: 0.697, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -225,7 +225,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 
     public void HitByEnemy(GameObject enemy)
     {
-        Debug.Log("Player is hit by enemy");
+        Debug.Log("Player is hit by " + enemy.gameObject.name);
         TakeHit(enemy.GetComponent<EnemyBeatController>().damage);
     }
 }

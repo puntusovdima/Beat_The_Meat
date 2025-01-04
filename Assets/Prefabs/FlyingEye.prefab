@@ -832,13 +832,13 @@ MonoBehaviour:
   showGizmos: 1
   hitLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  minTimeBeforeAttack: 0
-  minDistanceToAttack: 0
-  maxTimeBeforeAttack: 0
+    m_Bits: 128
+  minTimeBeforeAttack: 0.5
+  minDistanceToAttack: 0.9
+  maxTimeBeforeAttack: 2
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
-  attackDelay: 1
+  attackDelay: 0.5
   aiData: {fileID: 1474483462751897171}
   steeringBehaviours:
   - {fileID: 3572650190068635891}
