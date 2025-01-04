@@ -39,7 +39,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     [SerializeField] Transform target;
     // [SerializeField] private Transform _player;
     [SerializeField] EnemyHealth enemyHealth;
-    private bool _canAttack = true;
+    [SerializeField] bool _canAttack = true;
 
     public UnityEvent enemyHit;
 
@@ -71,6 +71,9 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     {
         switch (_state)
         {
+            case CharacterState.Hurt:
+                //Hurt();
+                break;
             case CharacterState.Idle:
                 Idle();
                 break;
@@ -79,9 +82,6 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
                 break;
             case CharacterState.Attack:
                 Attack();
-                break;
-            case CharacterState.Hurt:
-                //Hurt();
                 break;
             case CharacterState.WaitToAttack:
                WaitToAttack();
@@ -165,8 +165,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         Debug.Log(gameObject.name + " is attacking player");
         Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
         _rb.velocity = Vector2.zero;
-        _anim.CrossFadeInFixedTime(_attackAnimState1, 0.2f);
-        // _anim.Play(_attackAnimState1);
+        // _anim.CrossFadeInFixedTime(_attackAnimState1, 0.2f);
         foreach (Collider2D result in results)
         {
             if ((1 << result.gameObject.layer) == hitLayerMask.value)
@@ -177,7 +176,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
             // Debug.Log("Result: " + result.gameObject.name);
         }
 
-        StartCoroutine(WaitForAttackAnimationToEnd(_anim.GetCurrentAnimatorStateInfo(0)));
+        StartCoroutine(WaitForAttackAnimationToEnd());
     }
 
     private IEnumerator HitWithDelay(Collider2D result)
@@ -197,19 +196,24 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         }
     }
 
-    private IEnumerator WaitForAttackAnimationToEnd(AnimatorStateInfo stateInfo)
+    private IEnumerator WaitForAttackAnimationToEnd()
     {
-        // while (stateInfo.shortNameHash != _attackAnimState1)
-        // {
-        //     yield return null;
-        //     stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
-        // }
-        //
-        // while (stateInfo.normalizedTime < 1f)
-        // {
-        //     yield return null;
-        //     stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
-        // }
+        _anim.Play(_attackAnimState1);
+        AnimatorStateInfo stateInfo = _anim.GetCurrentAnimatorStateInfo(0); // 0 = Base Layer
+        Debug.Log($"Current state hash: {stateInfo.shortNameHash}, normalized time: {stateInfo.normalizedTime}");
+        while (stateInfo.shortNameHash != _attackAnimState1 && _state != CharacterState.Chase)
+        {
+            Debug.Log($"Current state: {stateInfo.shortNameHash}, Expected: {_attackAnimState1}");
+            yield return null;
+            stateInfo = _anim.GetCurrentAnimatorStateInfo(0); // Refresh stateInfo
+        }
+
+        while (stateInfo.normalizedTime < 1f && _state != CharacterState.Chase)
+        {
+            Debug.Log($"Animation progress: {stateInfo.normalizedTime * 100}%");
+            yield return null;
+            stateInfo = _anim.GetCurrentAnimatorStateInfo(0); // Refresh stateInfo
+        }
         yield return new WaitForSeconds(stateInfo.length);
 
         _state = CharacterState.Idle;
@@ -249,15 +253,12 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         
     }
 
-    public void ReturnToChase()
-    {
-        _state = CharacterState.Chase;
-    }
+
     private void Chase()
     {
         if (!target || _state == CharacterState.Hurt) return;
         Debug.Log(gameObject.name + " is chasing");
-        if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
+        if (Vector2.Distance(hitAnchor.position, target.position) < minDistanceToAttack)
         {
             movement = Vector2.zero;
             _state = CharacterState.WaitToAttack;
