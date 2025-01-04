@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8245013422539744072}
   - component: {fileID: 6852555641763605722}
   - component: {fileID: 7419595356488544770}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DropEsthetics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 7904250841997611609}
   - component: {fileID: 2569365192749652388}
   - component: {fileID: 8079270034378900964}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DropCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

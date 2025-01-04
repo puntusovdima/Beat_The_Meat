@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2271067939724528736}
   - component: {fileID: 2122899943038648500}
   - component: {fileID: 1882018947096261997}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: HealthPotion
   m_TagString: Heal
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1283665207813644478}
   - component: {fileID: 8366720089353703949}
   - component: {fileID: 1603060487445201036}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: HealthPotionAestetics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

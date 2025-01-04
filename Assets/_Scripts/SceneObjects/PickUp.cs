@@ -19,6 +19,7 @@ public class PickUp : MonoBehaviour, ITriggerEnter
     {
         if (collision.CompareTag("Player"))
         {
+            _player = collision.gameObject;
             itemCollected?.Invoke();
         }
     }

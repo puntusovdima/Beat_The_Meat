@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 {
     private enum CharacterState
@@ -21,7 +23,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     private readonly int _hitAnimState = Animator.StringToHash("Player_Hit");
     private readonly int _deathAnimState = Animator.StringToHash("Player_Death");
 
-    [SerializeField] protected LayerMask obstacleLayerMask;
+    [SerializeField] protected LayerMask obstacleLayer, itemLayer;
     [SerializeField] Collider2D terrainCollider;
     private Rigidbody2D _rb;
     private Vector2 _movement;
@@ -118,7 +120,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
             foreach (var result in results)
             {
                 // layers are stored in an integer(4Bytes) 00000000 00000000 00001000 00000000
-                // if ((1 << result.gameObject.layer) == (hitLayerMask.value | obstacleLayerMask.value))
+                if (((1 << result.gameObject.layer) & (hitLayerMask.value | obstacleLayer.value | itemLayer)) != 0)
                     result.GetComponentInParent<ITriggerEnter>()?.HitByPlayer(gameObject);
             }
 
