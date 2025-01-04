@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -231,5 +232,14 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     {
         Debug.Log("Player is hit by " + enemy.gameObject.name);
         TakeHit(enemy.GetComponent<EnemyBeatController>().damage);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<ITriggerObject>() != null)
+        {
+            Debug.Log("Activated ItriggerObject(EnemyGroup)");
+            other.GetComponent<ITriggerObject>().TriggerByPlayer(this);
+        }
     }
 }
