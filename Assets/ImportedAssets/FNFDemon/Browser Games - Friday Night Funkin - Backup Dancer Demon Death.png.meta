@@ -1,0 +1,3040 @@
+fileFormatVersion: 2
+guid: d5c32c19490ff5f42a4e4afc0c1b03ec
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2020
+        width: 42
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f29f9bcf0cf5643b936e1bb5ff5cb8
+      internalID: -847894634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2017
+        width: 110
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f656efe2387e3468a3a68638b23bc7
+      internalID: -898480492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_2
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1733
+        width: 210
+        height: 290
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5554ac13224934b8851e4c5eb054ee
+      internalID: 232110036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_3
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1709
+        width: 230
+        height: 290
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00571e1d03874cd4b95aa4d4546e38e4
+      internalID: 1164826666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_4
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 2021
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3b9552ba2bfb7408e3498a68e2c2e4
+      internalID: 559110618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_5
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1973
+        width: 32
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed9ca4afe82ddb439e8fc13345ccfc2
+      internalID: 728426850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_6
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1951
+        width: 31
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a89ac8a5469d84bb0f1e006f743d0c
+      internalID: -1582038902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_7
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 1711
+        width: 210
+        height: 290
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e5bf9d35b1cce46a37f0e760a63eac
+      internalID: 1515889349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_8
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1775
+        width: 300
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e655101222b5c144fa6f2c3b93e529c0
+      internalID: -784794954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_9
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 1728
+        width: 230
+        height: 290
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84e93c1a7f21244a876a5821afa8018
+      internalID: -1964687627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_10
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 1993
+        width: 19
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ce4bee950ec0d41a4ce0f6003e176f
+      internalID: -1096574705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_11
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 1971
+        width: 37
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d9c7b0dba66f142a63a014c3df3020
+      internalID: -1148538722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_12
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1952
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3246ab031f968304d8e2f915d0b70188
+      internalID: 764863386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_13
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1765
+        width: 300
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d92f123d9fa6a4e9393c2e8083f643
+      internalID: 1273211947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_14
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1726
+        width: 300
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f02425cc927d8438c31d9e1fbd0193
+      internalID: 1875358171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_15
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 1739
+        width: 300
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0afb4fbe3c3f9c4d89313fcd43e4d6c
+      internalID: 1602743293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_16
+      rect:
+        serializedVersion: 2
+        x: 2437
+        y: 1918
+        width: 57
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5363668b351fea048a3d079adcb97963
+      internalID: -1119096345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_17
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 1717
+        width: 210
+        height: 300
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b185268bc09f14488cfe0526eecff1
+      internalID: 1656843499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_18
+      rect:
+        serializedVersion: 2
+        x: 2774
+        y: 1954
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbe27df6f2211f4883ac50414d3eaf6
+      internalID: -673783114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_19
+      rect:
+        serializedVersion: 2
+        x: 2790
+        y: 1749
+        width: 270
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c6f2a022b92074eabc978e0ebddabb
+      internalID: 1535929265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_20
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 1951
+        width: 52
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc394e01092cc7942b01824d205055c9
+      internalID: -1987925757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_21
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1905
+        width: 57
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b5b6e2d2b2c2846bc1c8cb81958cd5
+      internalID: 840808401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_22
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 1930
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1cb4fe1301b454b840f336a94805e7
+      internalID: -1070435040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_23
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 1933
+        width: 18
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5c67db049d7ee4aa7afa760b96538c
+      internalID: 1185587313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_24
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1770
+        width: 58
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b316c89ad4cb22b42ae1e8d58b93997f
+      internalID: 902961328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_25
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 1788
+        width: 39
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b1d71a1e165b34fabf6783ac243232
+      internalID: 1536479620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_26
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 1795
+        width: 7
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68998e9a81cf73a449ddac27d379f1b2
+      internalID: 2043969535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_27
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1712
+        width: 36
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf1287e019e71b49a79f29f8ccbadd6
+      internalID: 1462154708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_28
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 1772
+        width: 19
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358aa45dd76f7fb46b583a0dcdc50c68
+      internalID: 1235751096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_29
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 1728
+        width: 33
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21de8c1a5e53fa41a6a82e2c07535c1
+      internalID: 1339277176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_30
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1715
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5656ab1739b3f146a5c5d2d1f29a8a6
+      internalID: -1724157701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1430
+        width: 235
+        height: 270
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef8e011cf02a4f4fb62752804c6832c
+      internalID: -1901594331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_32
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1687
+        width: 20
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43b82087582cca4e80495f69f0d0bd0
+      internalID: 621963889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_33
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1665
+        width: 38
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4069b506d4403c841ad1c9568cf6ce05
+      internalID: 1024424956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_34
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1430
+        width: 235
+        height: 270
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff600234b18fa74e8deb7714cc72559
+      internalID: -378983905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_35
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1413
+        width: 210
+        height: 300
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae987cf6e591fae4c889992d1e7bc35e
+      internalID: -1070554399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_36
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1659
+        width: 12
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25d9408b360a0a468f9aef1f8e44f15
+      internalID: 1990879209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_37
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1455
+        width: 270
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc45b1c5a860e0f41b08a1b7f9fd026e
+      internalID: -1010833375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_38
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1656
+        width: 51
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2958f6b0a53df454dad2d85d7847c25f
+      internalID: 1889809726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_39
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 1430
+        width: 275
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64041386be37cc8409d151ca5301702b
+      internalID: 996083144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_40
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1420
+        width: 275
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3adcb804f2113aa468d562d122422d03
+      internalID: 367407828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_41
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1639
+        width: 17
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c456029716e805d438c798377155d56a
+      internalID: -1894003003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_42
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1440
+        width: 28
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09eab2940404054c90bd0b399d129b3
+      internalID: 289211074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_43
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1435
+        width: 22
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e02276bc1a783489dc377dc9c47f85
+      internalID: -386565490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_44
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1440
+        width: 17
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d08caddf092bb49b86e6bfe9157f04
+      internalID: 2037616094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_45
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1441
+        width: 29
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0432fce848c3b9488d53a2c6406e558
+      internalID: 281110992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_46
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 1435
+        width: 22
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5f82660233c5a4aa0ee5027afcd7b4
+      internalID: -842763398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_47
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 1429
+        width: 50
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0c44ad5d4ab7249ae092479a3f8f8a
+      internalID: -1927079575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_48
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 1449
+        width: 19
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23be50d6f4df9c54c83c798376edae80
+      internalID: -2044824754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_49
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1421
+        width: 52
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e848f77cec74c4ba8a11120440f4af
+      internalID: -1223743436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_50
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1427
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b220016df605a48a0cf0a4d7d35916
+      internalID: -535631110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_51
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 1435
+        width: 12
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ca39440615994468bbb6374a2fb585
+      internalID: -1279518039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_52
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1421
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e9a1d23011a5b4489154c614be677a
+      internalID: 861567313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_53
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 1421
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6312168485884409acbf8a30f7f2bf
+      internalID: 1008933981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1360
+        width: 3209
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b802820c201fd1249ba10bee86b57013
+      internalID: 810842552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1286
+        width: 129
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc7aa228d3e06a42ad079f6172bd1d3
+      internalID: -13439969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_56
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1167
+        width: 166
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fbce3fab0ebcb40a3418672f4d8d2a
+      internalID: -1488072824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_57
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1189
+        width: 183
+        height: 153
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb2d117fa3b73946863a524143eb5b4
+      internalID: -663684872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_58
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1176
+        width: 167
+        height: 178
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad4e4583256c0940b8b09cfeef67a00
+      internalID: -490421123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_59
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1161
+        width: 180
+        height: 162
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5cd2dc100a74b4fb84501d7dae5c35
+      internalID: -474931446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_60
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 1153
+        width: 166
+        height: 178
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980bb707eb239f347a527c51ee86110a
+      internalID: 833188518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_61
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 1168
+        width: 182
+        height: 154
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc8e9d7c1b7d09429304f7ef941a721
+      internalID: 496456327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_62
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 1153
+        width: 166
+        height: 178
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194116cc89eba2f47b3ab57262f1b3ca
+      internalID: 955776792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_63
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 1153
+        width: 180
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686a0633e76fce64aaaab57d12c4fb8e
+      internalID: 65581235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_64
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1137
+        width: 127
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff4c3475e422b3479c4aeed6a18af5d
+      internalID: -307168652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_65
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 1161
+        width: 191
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bc645cb44874b4daa840f1302d3eab
+      internalID: -1405095890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_66
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 1131
+        width: 133
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3000b5b3a58fdfb4f94891c9e022e905
+      internalID: 918348032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_67
+      rect:
+        serializedVersion: 2
+        x: 2295
+        y: 1164
+        width: 180
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f365d910371085429db0f7ecaca7358
+      internalID: 1150045963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_68
+      rect:
+        serializedVersion: 2
+        x: 2514
+        y: 1136
+        width: 127
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9cce41436296e48977387005a75d2d
+      internalID: -481242675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_69
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 1181
+        width: 189
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48de1bbd7c728e4a87e32fed17cc148
+      internalID: -1354506709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_70
+      rect:
+        serializedVersion: 2
+        x: 2870
+        y: 1145
+        width: 133
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92954acb795962b42a1e9141b38579a4
+      internalID: 238695011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_71
+      rect:
+        serializedVersion: 2
+        x: 3023
+        y: 1166
+        width: 186
+        height: 145
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1944deb20666f647bb0420f0d2288d1
+      internalID: 120924413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1051
+        width: 3209
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c896912210512654e98bc048ae8973a4
+      internalID: 794496593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_73
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 962
+        width: 107
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a2694b14c4fc64182f847bfa022c5c
+      internalID: -1334593116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_74
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 866
+        width: 195
+        height: 171
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d039ae2dcee54bf4097f9fd8cb3c4a13
+      internalID: -1608595231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_75
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 836
+        width: 187
+        height: 195
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41cc5e6e62157d45992845803ae8f13
+      internalID: -1259934104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_76
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 831
+        width: 193
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca55dea3297db45adb960165b5a91a
+      internalID: -854838308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_77
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 838
+        width: 189
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a589a4207eebe8843a28e859ec10caa7
+      internalID: 1249468516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_78
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 847
+        width: 194
+        height: 173
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f2ddf263c5e2f4d813b229b37273f3
+      internalID: 1581221311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_79
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 824
+        width: 187
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5fa549af991c46498d1078051883abd
+      internalID: 892405513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_80
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 838
+        width: 194
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efc8dd1ee72e7345b9be1948b94f3c8
+      internalID: 975607463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_81
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 836
+        width: 190
+        height: 195
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6b18b799899944783260525d457997
+      internalID: -1681517957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_82
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 858
+        width: 215
+        height: 152
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd9e11e37bdcc7448a6e87fea906433
+      internalID: 532392794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_83
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 813
+        width: 177
+        height: 221
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d89c0fb45e6c394f8249bec6b53ed89
+      internalID: -1409120802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_84
+      rect:
+        serializedVersion: 2
+        x: 2295
+        y: 828
+        width: 222
+        height: 173
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780c6a68eed3b924ebf722407b8297ee
+      internalID: 555773684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_85
+      rect:
+        serializedVersion: 2
+        x: 2547
+        y: 817
+        width: 158
+        height: 224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f14001f01b58346b6e017179b24836
+      internalID: -2135751179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_86
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 842
+        width: 215
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb1f580cdb610c40b6356105f33c24b
+      internalID: -1609184550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_87
+      rect:
+        serializedVersion: 2
+        x: 2967
+        y: 806
+        width: 175
+        height: 221
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdd67b8ae7bd7e439fca00e27617e25
+      internalID: -42646381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_88
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 656
+        width: 222
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab30a0e959218934899b5f407e546901
+      internalID: -1999374560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_89
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 610
+        width: 158
+        height: 224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e78db6611c988f449032e6548efe145
+      internalID: 308194175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 546
+        width: 3209
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8703f4e1023c10b44be8e5efac94baa0
+      internalID: 2054111670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_91
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 471
+        width: 144
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2fb8404455d6347b16a2d71e534072
+      internalID: 332517990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_92
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 9
+        width: 583
+        height: 507
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea46dd931f3a44a46a663c8888f3a3bb
+      internalID: 2047441201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_93
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 473
+        width: 37
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2fd6b7852c4194abe94a403e530c13
+      internalID: 1300722598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_94
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 583
+        height: 507
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a12e9af6f363f4f8100b64b08af541
+      internalID: 833368753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_95
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 465
+        width: 135
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0f136b982201e47b1ec52f29be86cf
+      internalID: 2047571795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_96
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 468
+        width: 54
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f18dc1f779c93945805ed14d78d48b0
+      internalID: 300348646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_97
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 498
+        width: 18
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4120a145c7b4a764b8849209263466ce
+      internalID: -1993311083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_98
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 465
+        width: 106
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed14ad9c7a94374c9dc1d13975f0e6d
+      internalID: -1151276601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_99
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 466
+        width: 73
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509aaa778e5a30546aa6efdcaee1a7d1
+      internalID: 1863539709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_100
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 449
+        width: 36
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d270ab799884348a8cf11b0aece6b5
+      internalID: 909132620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_101
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 465
+        width: 211
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d03c73bc01b424488bb8ead6a974e16
+      internalID: 1950343944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_102
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 465
+        width: 213
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f7f353a7d8e284ba79e0f919efb7f9
+      internalID: -2033775657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_103
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 466
+        width: 178
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ed2d1c52b7fb24a8445b02b560b99d
+      internalID: 664938295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_104
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 70
+        width: 355
+        height: 407
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a117431027380f740b2e90f7f38052bb
+      internalID: -96618001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_105
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 70
+        width: 356
+        height: 407
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4506e999fdcdb6946b7db1d289fa6494
+      internalID: 704944589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_106
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 352
+        width: 77
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15248cba86fb92846bbfde46358894ac
+      internalID: -61944248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_107
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 352
+        width: 55
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570f953de25787946ad3cdde0a70b6fb
+      internalID: -517814703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_108
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 336
+        width: 244
+        height: 83
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b24613f65956af48beba872b5e86aaf
+      internalID: 725870762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_109
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 353
+        width: 63
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb07f9bb77d526a4da50ff8baaa422e5
+      internalID: 1166976090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_110
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 335
+        width: 36
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e202706e9b51fa243a0dd00af3595270
+      internalID: -1072371393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_111
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 352
+        width: 65
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f874924ad5235554780bf7c173970b7b
+      internalID: 767384122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_112
+      rect:
+        serializedVersion: 2
+        x: 2621
+        y: 353
+        width: 33
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838d580ceb1e7954a97345d1ae1a69de
+      internalID: -720276274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_113
+      rect:
+        serializedVersion: 2
+        x: 2654
+        y: 352
+        width: 36
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2476272525905324d85b8c6f3a2b99be
+      internalID: 177840770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_114
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 352
+        width: 130
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3840adda54d7745b23b8be1f27f50d
+      internalID: 435356253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_115
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 387
+        width: 17
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d15f0de6268d14f8aa60348cdde293
+      internalID: -2137479323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_116
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 236
+        width: 464
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67f7efe95862a741b573a2a5ab7970e
+      internalID: -295457617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_117
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 237
+        width: 136
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb975d0f6f35184fa3e25b603f6b875
+      internalID: -107775302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_118
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 237
+        width: 103
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b7c950e86670c4f830a15b6abca9a1
+      internalID: -1960522862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_119
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 106
+        width: 205
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672d8c495ddb1774c9cad3fd8f356ee2
+      internalID: 304966127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_120
+      rect:
+        serializedVersion: 2
+        x: 2273
+        y: 107
+        width: 94
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c86ea87904c264c80dce08f2482417
+      internalID: 662254122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_121
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 123
+        width: 70
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611236d78e5930f42a29be13ee353a9a
+      internalID: -2033836606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_122
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 121
+        width: 17
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f70dbfe8c353544ae3b50678e2b1c2
+      internalID: 909620014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_123
+      rect:
+        serializedVersion: 2
+        x: 2458
+        y: 107
+        width: 263
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757b055cedbff8b4ab2966990f53e017
+      internalID: 556347519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_124
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 10
+        width: 33
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8918d8afb86afd944a46baece352e3d6
+      internalID: -433490007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_125
+      rect:
+        serializedVersion: 2
+        x: 2086
+        y: 10
+        width: 146
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f11b1817eb023741b4c570f5862f921
+      internalID: 1102361311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_126
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 10
+        width: 67
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc11f8133a9a094d957d95ab8ebee67
+      internalID: -949236968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_127
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 61
+        width: 18
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e663bb8f09aa284698bb8d45b0997b1
+      internalID: -1898597259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_128
+      rect:
+        serializedVersion: 2
+        x: 2494
+        y: 10
+        width: 105
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbf9a4fb175f234b8783b20c247935f
+      internalID: 240930841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_129
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 12
+        width: 222
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2800a125cee3056498a7eaa299752b84
+      internalID: 1491066898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_130
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 9
+        width: 94
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14331ba5d1fa7cf4ba61a9f570ec819e
+      internalID: -1650924168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_131
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 9
+        width: 47
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6cdcb68da5711469a39f648ec98b9f
+      internalID: -2119933528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Death_132
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 1615
+        width: 133
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2887d95346baf4b9fcf37de5478b8e
+      internalID: 936770876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_0: -847894634
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_1: -898480492
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_10: -1096574705
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_100: 909132620
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_101: 1950343944
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_102: -2033775657
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_103: 664938295
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_104: -96618001
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_105: 704944589
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_106: -61944248
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_107: -517814703
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_108: 725870762
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_109: 1166976090
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_11: -1148538722
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_110: -1072371393
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_111: 767384122
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_112: -720276274
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_113: 177840770
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_114: 435356253
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_115: -2137479323
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_116: -295457617
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_117: -107775302
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_118: -1960522862
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_119: 304966127
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_12: 764863386
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_120: 662254122
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_121: -2033836606
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_122: 909620014
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_123: 556347519
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_124: -433490007
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_125: 1102361311
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_126: -949236968
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_127: -1898597259
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_128: 240930841
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_129: 1491066898
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_13: 1273211947
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_130: -1650924168
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_131: -2119933528
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_132: 936770876
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_14: 1875358171
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_15: 1602743293
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_16: -1119096345
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_17: 1656843499
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_18: -673783114
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_19: 1535929265
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_2: 232110036
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_20: -1987925757
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_21: 840808401
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_22: -1070435040
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_23: 1185587313
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_24: 902961328
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_25: 1536479620
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_26: 2043969535
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_27: 1462154708
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_28: 1235751096
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_29: 1339277176
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_3: 1164826666
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_30: -1724157701
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_31: -1901594331
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_32: 621963889
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_33: 1024424956
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_34: -378983905
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_35: -1070554399
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_36: 1990879209
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_37: -1010833375
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_38: 1889809726
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_39: 996083144
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_4: 559110618
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_40: 367407828
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_41: -1894003003
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_42: 289211074
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_43: -386565490
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_44: 2037616094
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_45: 281110992
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_46: -842763398
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_47: -1927079575
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_48: -2044824754
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_49: -1223743436
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_5: 728426850
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_50: -535631110
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_51: -1279518039
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_52: 861567313
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_53: 1008933981
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_54: 810842552
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_55: -13439969
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_56: -1488072824
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_57: -663684872
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_58: -490421123
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_59: -474931446
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_6: -1582038902
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_60: 833188518
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_61: 496456327
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_62: 955776792
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_63: 65581235
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_64: -307168652
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_65: -1405095890
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_66: 918348032
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_67: 1150045963
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_68: -481242675
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_69: -1354506709
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_7: 1515889349
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_70: 238695011
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_71: 120924413
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_72: 794496593
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_73: -1334593116
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_74: -1608595231
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_75: -1259934104
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_76: -854838308
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_77: 1249468516
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_78: 1581221311
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_79: 892405513
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_8: -784794954
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_80: 975607463
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_81: -1681517957
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_82: 532392794
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_83: -1409120802
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_84: 555773684
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_85: -2135751179
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_86: -1609184550
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_87: -42646381
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_88: -1999374560
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_89: 308194175
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_9: -1964687627
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_90: 2054111670
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_91: 332517990
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_92: 2047441201
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_93: 1300722598
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_94: 833368753
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_95: 2047571795
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_96: 300348646
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_97: -1993311083
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_98: -1151276601
+      Browser Games - Friday Night Funkin - Backup Dancer Demon Death_99: 1863539709
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
