@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class EnemyBeatController : CharacterBeatController, ITriggerEnter 
 {
-    public enum CharacterState { Chase, Attack, Hurt, WaitToAttack, Death, Idle, Knockback }
+    public enum CharacterState { Chase, Attack, Hurt, WaitToAttack, Death, Idle, Knockback, Block}
 
     // later attack delay should be randomly chosen(or clamped) between minTimeBeforeAttack and maxTimeBeforeAttack
     [SerializeField] private float minTimeBeforeAttack, minDistanceToAttack, maxTimeBeforeAttack;
@@ -39,7 +39,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     [SerializeField] Transform target;
     // [SerializeField] private Transform _player;
     [SerializeField] EnemyHealth enemyHealth;
-    [SerializeField] bool _canAttack = true;
+    [SerializeField] bool _canAttack = true, hasBlocked = false;
 
     public UnityEvent enemyHit;
 
@@ -92,17 +92,19 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
             case CharacterState.Knockback:
                 Knockback();
                 break;
+            case CharacterState.Block:
+                Block();
+                break;
         }
     }
     
     public void SetState(CharacterState state)
     {
-        // Debug.Log($"State changed to: {state}");
-        // _state = CharacterState.Knockback;
         _state = state;
     }
     public void HitByPlayer(GameObject player)
     {
+        if (_state == CharacterState.Block) return;
         enemyHit.Invoke();
         TakeHit(player.GetComponent<PlayerBeatController>().damage);
         Debug.Log(gameObject.name + " was hit by player");
@@ -117,24 +119,8 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private void WaitToAttack()
     {
         Debug.Log(gameObject.name + " is waiting to attack");
-        // _rb.velocity = Vector2.zero;
-        // _state = CharacterState.WaitToAttack;
-        // StartCoroutine(AttackWithDelay());
-        // if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
-        // {
-        //     StartCoroutine(AttackWithDelay());
-        // }
-        // else
-        // {
-        //     _state = CharacterState.Chase;
-        // }
-        // StopAllCoroutines();
         StartCoroutine(AttackWithDelay());
-        // if (Vector2.Distance(transform.position, target.position) > minDistanceToAttack)
-        // {
-        //     _state = CharacterState.Chase;
-        //     return;
-        // }
+
         _state = CharacterState.Attack;
     }
     
@@ -142,15 +128,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     {
         yield return new WaitForSeconds(Random.Range(minTimeBeforeAttack, maxTimeBeforeAttack));
         _state = CharacterState.Attack;
-        Debug.Log("Attack with delay coroutine, can attack:" + _canAttack);
-        // if (Vector2.Distance(hitAnchor.position, target.position) < hitSize.y * 0.67f)
-        // {
-        //     _state = CharacterState.Attack;
-        // }
-        // else
-        // {
-        //     _state = CharacterState.Chase;
-        // }
+        // Debug.Log("Attack with delay coroutine, can attack:" + _canAttack);
     }
 
     private void Attack()
@@ -170,7 +148,6 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         {
             if ((1 << result.gameObject.layer) == hitLayerMask.value)
             {
-                // result.GetComponent<ITriggerEnter>()?.HitByEnemy(gameObject);
                 StartCoroutine(HitWithDelay(result));
             }
             // Debug.Log("Result: " + result.gameObject.name);
@@ -231,12 +208,6 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
 
     private void Idle()
     {
-        // if (Vector2.Distance(transform.position, target.position) < minDistanceToAttack)
-        // {
-        //     _state = CharacterState.Attack;
-        //     return;
-        //     // WaitToAttack();
-        // }
         if (aiData.currentTarget || aiData.GetTargetsCount() > 0)
         {
             _state = CharacterState.Chase;
@@ -246,11 +217,38 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         Debug.Log(gameObject.name + " is idling");
         _rb.velocity = Vector2.zero; // Stop movement
         _anim.CrossFade(_idleAnimState, 0.1f); // Play Idle animation
-        //_anim.CrossFade(_idleAnimState, 0.1f);
     }
-    private void Hurt()
+
+    private void Block()
     {
+        _rb.velocity = Vector2.zero;
+        StartCoroutine(WaitForBlockToEnd());
+            
+    }
+
+    private IEnumerator WaitForBlockToEnd()
+    {
+        _anim.Play(_blockAnimState);
+        AnimatorStateInfo stateInfo = _anim.GetCurrentAnimatorStateInfo(0); // 0 = Base Layer
+        // Debug.Log($"Current state hash: {stateInfo.shortNameHash}, normalized time: {stateInfo.normalizedTime}");
+        while (stateInfo.shortNameHash != _blockAnimState && _state != CharacterState.Idle)
+        {
+            // Debug.Log($"Current state: {stateInfo.shortNameHash}, Expected: {_attackAnimState1}");
+            yield return null;
+            stateInfo = _anim.GetCurrentAnimatorStateInfo(0); // Refresh stateInfo
+        }
         
+        while (stateInfo.normalizedTime < 1f && _state != CharacterState.Idle)
+        {
+            // Debug.Log($"Animation progress: {stateInfo.normalizedTime * 100}%");
+            yield return null;
+            stateInfo = _anim.GetCurrentAnimatorStateInfo(0); // Refresh stateInfo
+        }
+        yield return new WaitForSeconds(stateInfo.length);  
+        // yield return new WaitForSeconds(Random.Range(0.8f, 1.8f));
+        // _anim.Play(_idleAnimState);
+        _state = CharacterState.Idle;
+        // yield return new WaitForSeconds(1.5f); // Can block again in 1.5 seconds
     }
 
 
@@ -261,7 +259,13 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         if (Vector2.Distance(hitAnchor.position, target.position) < minDistanceToAttack)
         {
             movement = Vector2.zero;
-            _state = CharacterState.WaitToAttack;
+            if (gameObject.CompareTag("Sceleton") && !hasBlocked)
+            {
+                hasBlocked = true;
+                _state = CharacterState.Block;
+            }
+            else
+                _state = CharacterState.WaitToAttack;
             return;
         }
 
@@ -290,7 +294,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     
     public void TakeHit(float damageTaken)
     {
-        if (_state == CharacterState.Attack) return;
+        if (_state == CharacterState.Attack || _state == CharacterState.Block) return;
         _state = CharacterState.Hurt;
         Debug.Log("Taking damage with: " + damageTaken + " damage");
         
@@ -306,6 +310,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         }
         else
         {
+            hasBlocked = false;
             _anim.CrossFadeInFixedTime(_hitAnimState, 0f);
             _state = CharacterState.Hurt;
             StartCoroutine(RecoverFromHit());
@@ -322,6 +327,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         _anim.CrossFadeInFixedTime(_deathAnimState, animCrossFaid);
         _rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
+        StopAllCoroutines();
         Destroy(gameObject);
     }
 
