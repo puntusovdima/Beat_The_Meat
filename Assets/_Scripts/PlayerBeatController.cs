@@ -242,4 +242,19 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
             other.GetComponent<ITriggerObject>().TriggerByPlayer(this);
         }
     }
+
+    public void Boost(float boost)
+    {   
+        speedX += boost;
+        speedY += boost;
+        StartCoroutine(ResetBoost(boost));
+
+    }
+
+    private IEnumerator ResetBoost(float boost)
+    {
+        yield return new WaitForSeconds(6f);
+        speedX -= boost;
+        speedY -= boost;
+    }
 }

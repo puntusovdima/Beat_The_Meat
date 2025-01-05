@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
 
         UpdateHealthBar();
     }
+    
 
     protected void UpdateHealthBar()
     {
