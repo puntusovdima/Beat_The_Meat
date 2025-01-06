@@ -37,6 +37,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     [SerializeField] Health _health;
 
     [SerializeField] private CharacterState _state;
+    [SerializeField] private GameObject gameOverUI;
 
     private void Awake()
     {
@@ -183,6 +184,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
         float animCrossFaid = 0.4f;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length - animCrossFaid);
         _anim.CrossFadeInFixedTime(_deathAnimState, animCrossFaid);
+        gameOverUI.SetActive(true);
     }
 
     private IEnumerator RecoverFromHit()
