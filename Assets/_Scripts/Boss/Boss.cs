@@ -1,59 +1,177 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, ITriggerEnter
 {
-    public enum CharacterState { Dance, Runaway, Rage, Knockback}
+    public enum CharacterState { Idle, RunAway, Dance, Rage, Knockback }
 
-    [SerializeField] private CharacterState state;
+    [SerializeField] private CharacterState currentState;
     [SerializeField] private float minDistanceToAttack;
-    [SerializeField] private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f, attackDelay = 0.5f;
+    [SerializeField] private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f;
     [SerializeField] private AIData aiData;
     [SerializeField] private List<SteeringBehaviour> steeringBehaviours;
-    [SerializeField] List<Detector> detectors;
-    [SerializeField] Vector2 movement;
-    
-    private readonly int _introAnimState = Animator.StringToHash("Boss_Intro");
-    private readonly int _danceAnimState = Animator.StringToHash("Boss_Dance");
+    [SerializeField] private List<Detector> detectors;
+    [SerializeField] private EnemyHealth enemyHealth;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
     [SerializeField] private ContextSolver movementDirectionSolver;
-
-    [SerializeField] private float positionChangeThreshold = 0.1f;  // New: Minimum distance to move
-    private Vector2 lastPosition;                                   // New: Store last position
-    private float stuckTimer;                                      // New: Track how long we've been "stuck"
-    [SerializeField] private float stuckThreshold = 0.5f;          // New: Time before considering new direction
-
-    public Transform player;
-    public bool isFlipped = false;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float positionChangeThreshold = 0.1f;
+    [SerializeField] private float stuckThreshold = 0.5f;
 
     private Rigidbody2D rb;
     private Animator _anim;
-    
-    [SerializeField] private float speed = 5f;
+    private Transform player;
+
+    private Vector2 movement;
+    private bool isFlipped = false;
+    private Vector2 lastPosition;
+    private float stuckTimer;
+    private CharacterState previousState;
+    private bool isTakingHit = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        rb.gravityScale = 0f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        lastPosition = rb.position;  // New: Initialize last position
+
+        rb.gravityScale = 0f; // Prevent falling in a 2D plane
+        currentState = CharacterState.Idle;
+        lastPosition = rb.position;
     }
 
     private void Start()
     {
-        InvokeRepeating("PerformDetection", 0, detectionDelay);
-        InvokeRepeating("UpdateBossStates", 0, aiUpdateDelay);
+        InvokeRepeating(nameof(PerformDetection), 0, detectionDelay);
     }
-    
+
+    private void Update()
+    {
+        if (!isTakingHit)
+        {
+            switch (currentState)
+            {
+                case CharacterState.Idle:
+                    HandleIdle();
+                    break;
+                case CharacterState.RunAway:
+                    HandleRunAway();
+                    break;
+                case CharacterState.Knockback:
+                    // Knockback handled in TakeHit coroutine
+                    break;
+                // Add other states like Dance, Rage here as needed
+            }
+        }
+    }
+
     private void PerformDetection()
     {
-        foreach (Detector detector in detectors)
+        foreach (var detector in detectors)
         {
             detector.Detect(aiData);
         }
     }
 
-    public void LookAtPlayer()
+    private void HandleIdle()
+    {
+        LookAtPlayer();
+
+        if (Vector2.Distance(transform.position, player.position) < minDistanceToAttack)
+        {
+            SwitchState(CharacterState.RunAway);
+        }
+    }
+
+    private void HandleRunAway()
+    {
+        LookAtPlayer();
+
+        if (Vector2.Distance(transform.position, player.position) > minDistanceToAttack)
+        {
+            rb.velocity = Vector2.zero;
+            stuckTimer = 0f;
+            GetComponent<HeadSpawner>().enabled = true; // Enable HeadSpawner
+            SwitchState(CharacterState.Idle);
+            return;
+        }
+
+        GetComponent<HeadSpawner>().enabled = false; // Disable HeadSpawner when moving
+
+        float distanceMoved = Vector2.Distance(rb.position, lastPosition);
+        if (distanceMoved < positionChangeThreshold)
+        {
+            stuckTimer += Time.deltaTime;
+            if (stuckTimer >= stuckThreshold)
+            {
+                // Modify direction slightly to break the deadlock
+                movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
+                movement = Quaternion.Euler(0, 0, Random.Range(-45f, 45f)) * movement;
+                stuckTimer = 0f;
+            }
+        }
+        else
+        {
+            lastPosition = rb.position;
+            stuckTimer = 0f;
+            movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
+        }
+
+        rb.velocity = movement * speed;
+    }
+
+    public void HitByPlayer(GameObject player)
+    {
+        TakeHit(player.GetComponent<PlayerBeatController>().damage);
+    }
+
+    public void HitByEnemy(GameObject enemy)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void TakeHit(float damage)
+    {
+        if (isTakingHit) return;
+
+        enemyHealth.TakeDamage(damage);
+        Debug.Log($"Boss is HitByPlayer, boss Health: {enemyHealth.currentHealth}");
+
+        if (enemyHealth.currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        StartCoroutine(HandleHitEffect());
+    }
+
+    private IEnumerator HandleHitEffect()
+    {
+        isTakingHit = true;
+        previousState = currentState;
+        SwitchState(CharacterState.Knockback);
+
+        // Freeze movement
+        rb.velocity = Vector2.zero;
+
+        // Flash white effect
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.2f);
+
+        spriteRenderer.color = originalColor;
+
+        yield return new WaitForSeconds(0.5f);
+
+        isTakingHit = false;
+        SwitchState(previousState);
+    }
+
+    private void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
@@ -72,49 +190,8 @@ public class Boss : MonoBehaviour
         }
     }
 
-    private void UpdateBossStates()
+    private void SwitchState(CharacterState newState)
     {
-        if (_anim.GetCurrentAnimatorStateInfo(0).shortNameHash == _introAnimState)
-            return;
-        LookAtPlayer();
-        RunFromPlayer();
-    }
-
-    private void RunFromPlayer()
-    {
-        if (Vector2.Distance(transform.position, player.position) > minDistanceToAttack)
-        {
-            movement = Vector2.zero;
-            rb.velocity = Vector2.zero;
-            stuckTimer = 0f;  // Reset stuck timer when stopping
-            return;
-        }
-
-        // Check if we've moved significantly
-        float distanceMoved = Vector2.Distance(rb.position, lastPosition);
-        
-        if (distanceMoved < positionChangeThreshold)
-        {
-            stuckTimer += Time.deltaTime;
-            
-            // If we're stuck for too long, force a new direction
-            if (stuckTimer >= stuckThreshold)
-            {
-                // Get a new direction but modify it slightly to break the deadlock
-                movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
-                movement = Quaternion.Euler(0, 0, Random.Range(-45f, 45f)) * movement;
-                stuckTimer = 0f;
-            }
-        }
-        else
-        {
-            // We've moved enough, update last position and reset timer
-            lastPosition = rb.position;
-            stuckTimer = 0f;
-            movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
-        }
-
-        // Apply movement
-        rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
+        currentState = newState;
     }
 }
