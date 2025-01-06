@@ -8,7 +8,7 @@ public class TestInputManager : MonoBehaviour
     private PlayerInputActions _playerInputActions;
     
 
-    public Action FirePerformed, JumpPerformed;
+    public Action FirePerformed, JumpPerformed, PausePerformed, UnPausePerformed;
 
     private void Awake()
     {
@@ -29,6 +29,8 @@ public class TestInputManager : MonoBehaviour
     {
         _playerInputActions.Player.Fire.performed += FireOnPerformed;
         _playerInputActions.Player.Jump.performed += JumpOnPerformed;
+        _playerInputActions.Player.Pause.performed += PauseOnPerformed;
+        _playerInputActions.UI.UnPause.performed += UnPauseOnPerformed;
     }
     
     private void FireOnPerformed(InputAction.CallbackContext obj)
@@ -40,5 +42,31 @@ public class TestInputManager : MonoBehaviour
     {
         JumpPerformed?.Invoke();
     }
-    
+
+    private void PauseOnPerformed(InputAction.CallbackContext obj)
+    {
+        PausePerformed?.Invoke();
+        SwitchPlayerToUI();
+    }
+
+    private void UnPauseOnPerformed(InputAction.CallbackContext obj)
+    {
+        UnPausePerformed?.Invoke();
+        SwitchUIToPlayer();
+    }
+
+    public void SwitchUIToPlayer()
+    {
+        Debug.Log("SWITCHED FROM UI TO PLAYER TESTINPUTACTIONS");
+        _playerInputActions.UI.Disable();
+        _playerInputActions.Player.Enable();
+    }
+
+    private void SwitchPlayerToUI()
+    {
+        Debug.Log("SWITCHED FROM PLAYER TO UI TESTINPUTACTIONS");
+        _playerInputActions.Player.Disable();
+        _playerInputActions.UI.Enable();
+    }
+
 }

@@ -38,6 +38,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 
     [SerializeField] private CharacterState _state;
     [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject pauseUI;
 
     private void Awake()
     {
@@ -53,48 +54,82 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
         _canAttack = true;
     }
 
+    public void Pause()
+    {
+        if(!_isDead)
+        {
+            // Time stops and show pause UI
+            Debug.Log("PAUSED PAUSED PAUSED PAUSED");
+            Time.timeScale = 0.0001f;
+            pauseUI.SetActive(true);
+        }
+
+    }
+
+    public void UnPause()
+    {
+        // Resume the game and hide pause UI
+        Debug.Log("RUNNING RUNNING RUNNING RUNNING");
+        Time.timeScale = 1.0f;
+        pauseUI.SetActive(false);
+    }
+
+    public void RestoreTimeScale()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     public void MoveAction(Vector2 movement)
     {
+        Debug.Log("Part 2");
         _movement = movement;
         _movement.x *= speedX;
         _movement.y *= speedY;
 
-        if (_state != CharacterState.Attack)
+        if(!_isDead)
         {
-            if (_movement.x < 0 && !Mathf.Approximately(transform.rotation.y, 180))
+            if (_state != CharacterState.Attack)
             {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
+                Debug.Log("Part 3 Not attacking");
+                if (_movement.x < 0 && !Mathf.Approximately(transform.rotation.y, 180))
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                else if (_movement.x > 0 && !Mathf.Approximately(transform.rotation.y, 0))
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
             }
-            else if (_movement.x > 0 && !Mathf.Approximately(transform.rotation.y, 0))
+
+            if (_state == CharacterState.Idle || _state == CharacterState.Walk)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                Debug.Log("Part 3 Idle / Walking");
+                if (_movement == Vector2.zero && _state != CharacterState.Idle)
+                {
+                    _state = CharacterState.Idle;
+                    _anim.CrossFadeInFixedTime(_idleAnimState, 0.2f);
+                }
+                else if (_movement != Vector2.zero && _state != CharacterState.Walk)
+                {
+                    _state = CharacterState.Walk;
+                    _anim.CrossFadeInFixedTime(_runAnimState, 0.2f);
+                }
+
+                _rb.velocity = _movement;
+            }
+            else
+            {
+                Debug.Log("Part 3 else");
+                _rb.velocity = new Vector2(_movement.x, _rb.velocity.y);
             }
         }
 
-        if (_state == CharacterState.Idle || _state == CharacterState.Walk)
-        {
-            if (_movement == Vector2.zero && _state != CharacterState.Idle)
-            {
-                _state = CharacterState.Idle;
-                _anim.CrossFadeInFixedTime(_idleAnimState, 0.2f);
-            }
-            else if (_movement != Vector2.zero && _state != CharacterState.Walk)
-            {
-                _state = CharacterState.Walk;
-                _anim.CrossFadeInFixedTime(_runAnimState, 0.2f);
-            }
-
-            _rb.velocity = _movement;
-        }
-        else
-        {
-            _rb.velocity = new Vector2(_movement.x, _rb.velocity.y);
-        }
+        
     }
 
     public void Jump()
     {
-        if (_state == CharacterState.Walk || _state == CharacterState.Idle)
+        if ((_state == CharacterState.Walk || _state == CharacterState.Idle) && !_isDead)
         {
             terrainCollider.enabled = false;
             _state = CharacterState.Jump;
@@ -108,7 +143,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     public void Attack()
     {
 
-        if (_state == CharacterState.Walk || _state == CharacterState.Idle && _canAttack)
+        if ((_state == CharacterState.Walk || _state == CharacterState.Idle) && _canAttack && !_isDead)
         {
             Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
             _canAttack = false;
@@ -184,6 +219,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
         float animCrossFaid = 0.4f;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length - animCrossFaid);
         _anim.CrossFadeInFixedTime(_deathAnimState, animCrossFaid);
+        _isDead = true;
         gameOverUI.SetActive(true);
     }
 
