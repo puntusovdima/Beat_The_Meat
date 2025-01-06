@@ -1,16 +1,14 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BossDestructible : MonoBehaviour, ITriggerEnter
+public class HallwayDestructible : MonoBehaviour, ITriggerEnter
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject cam;
-    [SerializeField] private GameObject runeGlow;
-    [SerializeField] private GameObject pillarShadow;
 
-    private Vector3 bossRoomPlayerPos = new Vector3(140, 0, 0);
-    private Vector3 bossRoomCamPos = new Vector3(143, 0, -10);
+    private Vector3 hallwayRoomPlayerPos = new Vector3(100, 0, 0);
+    private Vector3 hallwayRoomCamPos = new Vector3(103, 0, -10);
 
     public void HitByPlayer(GameObject player)
     {
@@ -25,14 +23,12 @@ public class BossDestructible : MonoBehaviour, ITriggerEnter
     private IEnumerator TransportDelay()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        runeGlow.SetActive(false);
-        pillarShadow.SetActive(false);
         yield return new WaitForSeconds(0.5f);
-        //Take the player to the boss room
-        player.transform.position = bossRoomPlayerPos;
+        //Take the player to the hallway room
+        player.transform.position = hallwayRoomPlayerPos;
         cam.GetComponent<FollowPlayer>().SetCamTrackStatus(false);
-        cam.transform.position = bossRoomCamPos;
-        
+        cam.transform.position = hallwayRoomCamPos;
+
 
     }
 }
