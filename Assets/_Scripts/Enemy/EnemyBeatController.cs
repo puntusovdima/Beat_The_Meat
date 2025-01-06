@@ -214,7 +214,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
             // Chase();
             return;
         }
-        Debug.Log(gameObject.name + " is idling");
+        // Debug.Log(gameObject.name + " is idling");
         _rb.velocity = Vector2.zero; // Stop movement
         _anim.CrossFade(_idleAnimState, 0.1f); // Play Idle animation
     }
@@ -255,7 +255,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private void Chase()
     {
         if (!target || _state == CharacterState.Hurt) return;
-        Debug.Log(gameObject.name + " is chasing");
+        // Debug.Log(gameObject.name + " is chasing");
         if (Vector2.Distance(hitAnchor.position, target.position) < minDistanceToAttack)
         {
             movement = Vector2.zero;

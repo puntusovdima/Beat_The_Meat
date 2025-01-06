@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Heal
   - Sceleton
+  - Dancer
   layers:
   - Default
   - TransparentFX
