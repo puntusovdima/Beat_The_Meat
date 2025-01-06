@@ -247,7 +247,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         yield return new WaitForSeconds(stateInfo.length);  
         // yield return new WaitForSeconds(Random.Range(0.8f, 1.8f));
         // _anim.Play(_idleAnimState);
-        _state = CharacterState.Idle;
+        _state = CharacterState.Chase;
         // yield return new WaitForSeconds(1.5f); // Can block again in 1.5 seconds
     }
 
@@ -310,7 +310,6 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         }
         else
         {
-            hasBlocked = false;
             _anim.CrossFadeInFixedTime(_hitAnimState, 0f);
             _state = CharacterState.Hurt;
             StartCoroutine(RecoverFromHit());
@@ -334,6 +333,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
     private IEnumerator RecoverFromHit()
     {
         yield return new WaitForSeconds(0.2f);
+        hasBlocked = false;
         _state = CharacterState.Chase;
         _anim.Play(_runAnimState);
         //_anim.CrossFadeInFixedTime(_runAnimState, 0.2f);

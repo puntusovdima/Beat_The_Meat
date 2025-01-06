@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,15 +97,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Parts_0
+      name: Dancer_Head_R
       rect:
         serializedVersion: 2
-        x: 146
+        x: 145
         y: 280
         width: 170
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,15 +118,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Browser Games - Friday Night Funkin - Backup Dancer Demon Parts_1
+      name: Dancer_Head_L
       rect:
         serializedVersion: 2
         x: 317
-        y: 280
+        y: 281
         width: 170
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +134,153 @@ TextureImporter:
       bones: []
       spriteID: 0d26c641d59cc2b489b922137ca44651
       internalID: 515713786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Body_Alt
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 145
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08d3e5cc32766144a91cf69683ea9e7
+      internalID: -2050940143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Body
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 320
+        width: 152
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bd814ebed5d314aa0cf3e2f51cf6fc
+      internalID: -576147755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Shoulder_R
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 385
+        width: 92
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b699e1cd82f044682772e8aedc400c
+      internalID: -1853026897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Hand_R
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 391
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec9a824c41576b42bc290e14cd7066b
+      internalID: -1643370339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Legs
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 270
+        width: 154
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7efe6bf42bbb0459e6b51e77cc6cb1
+      internalID: -998806602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Shoulder_L
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 363
+        width: 95
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996a02c588366dd47b96f7ae2172ff68
+      internalID: -1286014252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dancer_Hand_Left
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 407
+        width: 149
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cb311f833260e43b625d459cba9251
+      internalID: -303752233
       vertices: []
       indices: 
       edges: []
@@ -149,8 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Browser Games - Friday Night Funkin - Backup Dancer Demon Parts_0: -2124220644
-      Browser Games - Friday Night Funkin - Backup Dancer Demon Parts_1: 515713786
+      Dancer_Body: -576147755
+      Dancer_Body_Alt: -2050940143
+      Dancer_Hand_Left: -303752233
+      Dancer_Hand_R: -1643370339
+      Dancer_Head_L: 515713786
+      Dancer_Head_R: -2124220644
+      Dancer_Legs: -998806602
+      Dancer_Shoulder_L: -1286014252
+      Dancer_Shoulder_R: -1853026897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
