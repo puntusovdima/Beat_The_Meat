@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boss : MonoBehaviour, ITriggerEnter
 {
     public enum CharacterState { Idle, RunAway, Dance, Rage, Knockback }
 
-    [SerializeField] private CharacterState currentState;
+    [SerializeField] public CharacterState currentState;
     [SerializeField] private float minDistanceToAttack;
     [SerializeField] private float detectionDelay = 0.01f, aiUpdateDelay = 0.06f;
     [SerializeField] private AIData aiData;
@@ -19,6 +20,8 @@ public class Boss : MonoBehaviour, ITriggerEnter
     [SerializeField] private float speed = 5f;
     [SerializeField] private float positionChangeThreshold = 0.1f;
     [SerializeField] private float stuckThreshold = 0.5f;
+    
+    private readonly int _introAnimState = Animator.StringToHash("Boss_Intro");
 
     private Rigidbody2D rb;
     private Animator _anim;
@@ -45,10 +48,13 @@ public class Boss : MonoBehaviour, ITriggerEnter
     private void Start()
     {
         InvokeRepeating(nameof(PerformDetection), 0, detectionDelay);
+        InvokeRepeating("UpdateBossStates", 0, aiUpdateDelay);
     }
 
-    private void Update()
+    private void UpdateBossStates()
     {
+        if (_anim.GetCurrentAnimatorStateInfo(0).shortNameHash == _introAnimState)
+            return;
         if (!isTakingHit)
         {
             switch (currentState)
@@ -77,6 +83,7 @@ public class Boss : MonoBehaviour, ITriggerEnter
 
     private void HandleIdle()
     {
+
         LookAtPlayer();
 
         if (Vector2.Distance(transform.position, player.position) < minDistanceToAttack)
@@ -97,33 +104,35 @@ public class Boss : MonoBehaviour, ITriggerEnter
             SwitchState(CharacterState.Idle);
             return;
         }
+        // GetComponent<HeadSpawner>().enabled = false; // Disable HeadSpawner when moving
 
-        GetComponent<HeadSpawner>().enabled = false; // Disable HeadSpawner when moving
+        // float distanceMoved = Vector2.Distance(rb.position, lastPosition);
+        // if (distanceMoved < positionChangeThreshold)
+        // {
+        //     stuckTimer += Time.deltaTime;
+        //     if (stuckTimer >= stuckThreshold)
+        //     {
+        //         // Modify direction slightly to break the deadlock
+        //         movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
+        //         movement = Quaternion.Euler(0, 0, Random.Range(-45f, 45f)) * movement;
+        //         stuckTimer = 0f;
+        //     }
+        // }
+        // else
+        // {
+        //     lastPosition = rb.position;
+        //     stuckTimer = 0f;
+        //     movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
+        // }
+        movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
 
-        float distanceMoved = Vector2.Distance(rb.position, lastPosition);
-        if (distanceMoved < positionChangeThreshold)
-        {
-            stuckTimer += Time.deltaTime;
-            if (stuckTimer >= stuckThreshold)
-            {
-                // Modify direction slightly to break the deadlock
-                movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
-                movement = Quaternion.Euler(0, 0, Random.Range(-45f, 45f)) * movement;
-                stuckTimer = 0f;
-            }
-        }
-        else
-        {
-            lastPosition = rb.position;
-            stuckTimer = 0f;
-            movement = movementDirectionSolver.GetDirectionToMove(steeringBehaviours, aiData);
-        }
 
         rb.velocity = movement * speed;
     }
 
     public void HitByPlayer(GameObject player)
     {
+        gameObject.GetComponent<HeadSpawner>().SpawnEnemiesWhenHit();
         TakeHit(player.GetComponent<PlayerBeatController>().damage);
     }
 

@@ -57,6 +57,7 @@ public class ExplodingHead : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.GetComponent<PlayerBeatController>().TakeHit(damage);
+        if (other.CompareTag("Player"))
+            other.GetComponent<PlayerBeatController>().TakeHit(damage);
     }
 }

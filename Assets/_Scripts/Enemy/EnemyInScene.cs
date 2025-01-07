@@ -33,8 +33,16 @@ public class EnemyInScene : MonoBehaviour
 
         if (m_currentTime >= m_timeToInitBehavour && !m_isStarted)
         {
-            m_enemyObject.GetComponent<EnemyBeatController>().enabled = true;
-            m_myGroup.InitEnemy(m_enemyObject.GetComponent<EnemyBeatController>());
+            if (!gameObject.CompareTag("Dancer"))
+            {
+                m_enemyObject.GetComponent<EnemyBeatController>().enabled = true;
+                m_myGroup.InitEnemy(m_enemyObject.GetComponent<EnemyBeatController>());
+            }
+            else
+            {
+                m_enemyObject.GetComponent<Boss>().enabled = true;
+                m_myGroup.InitBoss(m_enemyObject.GetComponent<Boss>());
+            }
             m_isStarted = true;
         }
     }

@@ -325,6 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmos: 1
+  obstacleAvoidanceWeight: 2
+  playerAvoidanceWeight: 1.5
 --- !u!1 &4634472297279547901
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,11 +745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0870895d55e2e284383f01cc6b08505b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 2
-  speedY: 2
+  speedX: 3
+  speedY: 3
   jumpForce: 0
-  damage: 5
-  maxHealthPoints: 30
+  damage: 10
+  maxHealthPoints: 50
   hitAnchor: {fileID: 1149965840714958859}
   bottomAnchor: {fileID: 706334427550367753}
   hitSize: {x: 0.5, y: 1}
@@ -774,6 +776,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyHealth: {fileID: 5170023635712237097}
   _canAttack: 1
+  hasBlocked: 0
   enemyHit:
     m_PersistentCalls:
       m_Calls:

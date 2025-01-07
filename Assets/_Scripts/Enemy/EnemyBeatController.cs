@@ -51,6 +51,7 @@ public class EnemyBeatController : CharacterBeatController, ITriggerEnter
         _state = CharacterState.Chase;
         //_floorLevel = float.MinValue;
         _canAttack = true;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         // _target = _player;
     }
     

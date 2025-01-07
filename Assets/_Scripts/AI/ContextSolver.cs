@@ -12,18 +12,13 @@ public class ContextSolver : MonoBehaviour
     private float rayLength = 2;
 
     [SerializeField]
-    private float obstacleAvoidanceWeight = 2f;    
+    private float obstacleAvoidanceWeight = 2f;    // Weight for obstacle avoidance
     [SerializeField]
-    private float playerAvoidanceWeight = 1.5f;    
-
-    [SerializeField]
-    private float directionChangeThreshold = 0.2f;  // New: Minimum difference needed to change direction
-    private Vector2 currentDirection;               // New: Store the current movement direction
+    private float playerAvoidanceWeight = 1.5f;    // Weight for running away from player
 
     private void Start()
     {
         interestGizmo = new float[8];
-        currentDirection = Vector2.zero;
     }
 
     public Vector2 GetDirectionToMove(List<SteeringBehaviour> behaviours, AIData aiData)
@@ -39,54 +34,43 @@ public class ContextSolver : MonoBehaviour
 
         if (gameObject.CompareTag("Dancer"))
         {
+            // Handle obstacle avoidance first
             float[] finalInterest = new float[8];
-            
-            // Apply thresholds to danger and interest values
             for (int i = 0; i < 8; i++)
             {
-                // Only consider danger values above the threshold
-                float dangerValue = danger[i] > directionChangeThreshold ? danger[i] : 0;
-                float interestValue = Mathf.Abs(interest[i]) > directionChangeThreshold ? interest[i] : 0;
-
-                if (dangerValue > 0)
+                // Strongly avoid directions with danger (obstacles)
+                if (danger[i] > 0)
                 {
-                    finalInterest[i] = -dangerValue * obstacleAvoidanceWeight;
+                    finalInterest[i] = -danger[i] * obstacleAvoidanceWeight;
                 }
                 else
                 {
-                    finalInterest[i] = -interestValue * playerAvoidanceWeight;
+                    // For directions without immediate danger, run away from player
+                    // Invert the interest (which should contain player position info)
+                    // Higher interest means we want to go in the opposite direction
+                    finalInterest[i] = -interest[i] * playerAvoidanceWeight;
                 }
             }
             interest = finalInterest;
         }
         else
         {
+            //subtract danger values from interest array for non-dancer objects
             for (int i = 0; i < 8; i++)
             {
                 interest[i] = Mathf.Clamp01(interest[i] - danger[i]);
             }
         }
 
+        //get the average direction
         Vector2 outputDirection = Vector2.zero;
         for (int i = 0; i < 8; i++)
         {
             outputDirection += Directions.eightDirections[i] * interest[i];
         }
-        
-        // Only update direction if the change is significant
-        if (outputDirection.magnitude > directionChangeThreshold)
-        {
-            outputDirection.Normalize();
-            
-            // Only change direction if the new direction is significantly different
-            if (currentDirection == Vector2.zero || 
-                Vector2.Distance(outputDirection, currentDirection) > directionChangeThreshold)
-            {
-                currentDirection = outputDirection;
-            }
-        }
+        outputDirection.Normalize();
+        resultDirection = outputDirection;
 
-        resultDirection = currentDirection;
         return resultDirection;
     }
 

@@ -15,6 +15,12 @@ public class EnemyGroup : MonoBehaviour, ITriggerObject
         m_currentEnemy++;
     }
 
+    public void InitBoss(Boss boss)
+    {
+        boss.gameObject.SetActive(true);
+        m_currentEnemy++;
+    }
+
     private void Start()
     {
         for (int i = 0; i < m_enemyList.Count; i++)

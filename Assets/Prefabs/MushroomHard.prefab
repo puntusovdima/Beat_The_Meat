@@ -402,6 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmos: 1
+  obstacleAvoidanceWeight: 2
+  playerAvoidanceWeight: 1.5
 --- !u!1 &4634472297279547901
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +826,7 @@ MonoBehaviour:
   speedX: 2
   speedY: 2
   jumpForce: 0
-  damage: 5
+  damage: 10
   maxHealthPoints: 30
   hitAnchor: {fileID: 1149965840714958859}
   bottomAnchor: {fileID: 706334427550367753}
@@ -852,6 +854,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyHealth: {fileID: 5170023635712237097}
   _canAttack: 1
+  hasBlocked: 0
   enemyHit:
     m_PersistentCalls:
       m_Calls:

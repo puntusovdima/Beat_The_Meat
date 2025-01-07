@@ -94,8 +94,8 @@ MonoBehaviour:
   speedX: 2
   speedY: 2
   jumpForce: 0
-  damage: 5
-  maxHealthPoints: 30
+  damage: 10
+  maxHealthPoints: 50
   hitAnchor: {fileID: 952518476696144966}
   bottomAnchor: {fileID: 2617124976876881916}
   hitSize: {x: 0.5, y: 1}
@@ -122,6 +122,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyHealth: {fileID: 3765684438202942258}
   _canAttack: 1
+  hasBlocked: 0
   enemyHit:
     m_PersistentCalls:
       m_Calls:
@@ -541,6 +542,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmos: 1
+  obstacleAvoidanceWeight: 2
+  playerAvoidanceWeight: 1.5
 --- !u!1 &3638498928583161728
 GameObject:
   m_ObjectHideFlags: 0
