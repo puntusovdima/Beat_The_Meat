@@ -20,6 +20,8 @@ public class Boss : MonoBehaviour, ITriggerEnter
     [SerializeField] private float speed = 5f;
     [SerializeField] private float positionChangeThreshold = 0.1f;
     [SerializeField] private float stuckThreshold = 0.5f;
+
+    [SerializeField] private GameObject youWinUI;
     
     private readonly int _introAnimState = Animator.StringToHash("Boss_Intro");
 
@@ -150,6 +152,8 @@ public class Boss : MonoBehaviour, ITriggerEnter
 
         if (enemyHealth.currentHealth <= 0)
         {
+            youWinUI.SetActive(true);
+            Debug.Log("YOU WIN YOU WIN YOU WIN YOU WIN YOU WIN YOU WIN YOU WIN");
             Destroy(gameObject);
             return;
         }

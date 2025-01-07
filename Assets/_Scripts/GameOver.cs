@@ -15,15 +15,6 @@ public class GameOver : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (player.GetComponent<Health>().currentHealth == 0)
-        {
-            gameObject.SetActive(true);
-        }
-    }
-
     public void ReloadGame()
     {
         SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);

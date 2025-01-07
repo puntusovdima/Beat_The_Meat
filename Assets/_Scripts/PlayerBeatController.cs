@@ -40,6 +40,8 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private GameObject pauseUI;
 
+    [SerializeField] private float atkDelay;
+
     private void Awake()
     {
         _currentHealthPoints = maxHealthPoints;
@@ -145,11 +147,12 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 
         if ((_state == CharacterState.Walk || _state == CharacterState.Idle) && _canAttack && !_isDead)
         {
+            _anim.CrossFadeInFixedTime(_attackAnimState, 0.2f);
+
             Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
             _canAttack = false;
             _state = CharacterState.Attack;
             _rb.velocity = Vector2.zero;
-            _anim.CrossFadeInFixedTime(_attackAnimState, 0.2f);
 
             //var results = new Collider2D[] { };
             var size = Physics2D.OverlapBoxNonAlloc(hitAnchor.position, hitSize, 0, results);
@@ -162,6 +165,8 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
             }
 
             StartCoroutine(WaitForAttackAnimationToEnd(_anim.GetCurrentAnimatorStateInfo(0)));
+
+
         }
     }
 

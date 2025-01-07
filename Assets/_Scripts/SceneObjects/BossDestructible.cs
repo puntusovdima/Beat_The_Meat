@@ -47,7 +47,7 @@ public class BossDestructible : MonoBehaviour, ITriggerEnter
     private IEnumerator TransportDelay()
     {
         runeGlow.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         //Take the player to the boss room
         player.transform.position = bossRoomPlayerPos;
         cam.GetComponent<FollowPlayer>().SetCamTrackStatus(false);

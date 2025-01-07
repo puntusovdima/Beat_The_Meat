@@ -23,7 +23,7 @@ public class HallwayDestructible : MonoBehaviour, ITriggerEnter
     private IEnumerator TransportDelay()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         //Take the player to the hallway room
         player.transform.position = hallwayRoomPlayerPos;
         cam.GetComponent<FollowPlayer>().SetCamTrackStatus(false);
