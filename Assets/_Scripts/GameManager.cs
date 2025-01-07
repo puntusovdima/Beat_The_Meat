@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     private void UpdateScore(float score)
     {
         if (scoreText != null)
-            scoreText.text = $"Score: {score:0000}";
+            scoreText.text = $"ENEMIES SLAIN: {score:00}";
+    }
+
+    public int GetScore()
+    {
+        return((int)score);
     }
 }

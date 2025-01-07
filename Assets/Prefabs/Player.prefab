@@ -291,6 +291,8 @@ MonoBehaviour:
   terrainCollider: {fileID: 3115014607411075065}
   _health: {fileID: 2893692577938116931}
   _state: 0
+  gameOverUI: {fileID: 0}
+  pauseUI: {fileID: 0}
 --- !u!114 &909511104154559411
 MonoBehaviour:
   m_ObjectHideFlags: 0

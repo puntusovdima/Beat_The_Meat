@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  cam: {fileID: 0}
   runeGlow: {fileID: 1360264395099639754}
   pillarShadow: {fileID: 1360264394546084190}
 --- !u!1 &1360264395099639754
