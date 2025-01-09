@@ -7,6 +7,7 @@ TagManager:
   - Heal
   - Sceleton
   - Dancer
+  - BossDestructible
   layers:
   - Default
   - TransparentFX

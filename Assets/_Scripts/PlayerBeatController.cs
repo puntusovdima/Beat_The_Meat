@@ -35,6 +35,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     private bool _isDead;
 
     [SerializeField] Health _health;
+    [SerializeField] PlayerSFX _playerSFX;
 
     [SerializeField] private CharacterState _state;
     [SerializeField] private GameObject gameOverUI;
@@ -147,6 +148,7 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 
         if ((_state == CharacterState.Walk || _state == CharacterState.Idle) && _canAttack && !_isDead)
         {
+            _playerSFX.PlayAttackClip();
             _anim.CrossFadeInFixedTime(_attackAnimState, 0.2f);
 
             Collider2D[] results = Physics2D.OverlapBoxAll(hitAnchor.position, hitSize, 0);
@@ -192,7 +194,8 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
     public void TakeHit(float damageTaken)
     {
         if (_state == CharacterState.Attack) return;
-        Debug.Log("Taking damage with: " + damageTaken + " damage(Player)");
+        // Debug.Log("Taking damage with: " + damageTaken + " damage(Player)");
+        _playerSFX.PlayHurtClip();
         if (_state == CharacterState.Fall || _state == CharacterState.Jump)
         {
             Ground();

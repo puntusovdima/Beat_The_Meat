@@ -14,6 +14,7 @@ public class BossDestructible : MonoBehaviour, ITriggerEnter
 
     private int continueScore = 15;
 
+    public bool bossDestructibleActivated;
     private void Start()
     {
         gameObject.GetComponent<Collider2D>().enabled = false;
@@ -37,6 +38,7 @@ public class BossDestructible : MonoBehaviour, ITriggerEnter
     public void HitByPlayer(GameObject player)
     {
         StartCoroutine(TransportDelay());
+        bossDestructibleActivated = true;
     }
 
     public void HitByEnemy(GameObject enemy)
