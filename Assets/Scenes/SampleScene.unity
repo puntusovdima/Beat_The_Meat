@@ -5986,6 +5986,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 658975223}
+    - target: {fileID: 3115014607411075065, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115014607411075065, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4433614367696069421, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
       propertyPath: speedX
       value: 6
@@ -6008,7 +6016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433614367696069421, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
       propertyPath: hitSize.y
-      value: 1.75
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4433614367696069421, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
       propertyPath: _playerSFX
@@ -6070,7 +6078,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8263398453977936364, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8263398453977936364, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

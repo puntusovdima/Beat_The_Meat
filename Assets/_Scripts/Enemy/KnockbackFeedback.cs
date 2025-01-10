@@ -22,6 +22,7 @@ public class KnockbackFeedback : MonoBehaviour
 
     public void PlayFeedback(GameObject sender)
     {
+        if (!gameObject.activeInHierarchy) return;
         // Debug.Log("Knockback feedback is activated");
         // if (GetComponent<EnemyBeatController>() is { } enemyBeatController)
         if (_enemyBeatController)

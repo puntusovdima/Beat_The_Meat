@@ -36,17 +36,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "3e3e4d74-9fca-421b-a465-570145f68f9f",
-                    "path": "<Keyboard>/#(F)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboar_mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c5363945-02d0-41e3-a8d1-82b1a9590a00",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",

@@ -758,7 +758,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   minTimeBeforeAttack: 1
-  minDistanceToAttack: 0.5
+  minDistanceToAttack: 0.6
   maxTimeBeforeAttack: 2
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
@@ -776,6 +776,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyHealth: {fileID: 6976692148619864663}
   _canAttack: 1
+  hasBlocked: 0
   enemyHit:
     m_PersistentCalls:
       m_Calls:
@@ -784,7 +785,7 @@ MonoBehaviour:
         m_MethodName: PlayFeedback
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 7114299869744011908, guid: 1b0e8387adfc67241937b8a675746ffc, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -983,6 +984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmos: 1
+  obstacleAvoidanceWeight: 2
+  playerAvoidanceWeight: 1.5
 --- !u!1 &8932911370910425168
 GameObject:
   m_ObjectHideFlags: 0

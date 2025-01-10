@@ -62,7 +62,8 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
         {
             // Time stops and show pause UI
             Debug.Log("PAUSED PAUSED PAUSED PAUSED");
-            Time.timeScale = 0.0001f;
+            // Time.timeScale = 0.0001f;
+            Time.timeScale = 0;
             pauseUI.SetActive(true);
         }
 
@@ -173,13 +174,13 @@ public class PlayerBeatController : CharacterBeatController, ITriggerEnter
 
     private IEnumerator WaitForAttackAnimationToEnd(AnimatorStateInfo stateInfo)
     {
-        while (stateInfo.shortNameHash != _attackAnimState)
+        while (stateInfo.shortNameHash != _attackAnimState && _state == CharacterState.Attack)
         {
             yield return null;
             stateInfo = _anim.GetCurrentAnimatorStateInfo(0);
         }
 
-        while (stateInfo.normalizedTime < 1f)
+        while (stateInfo.normalizedTime < 1f && _state == CharacterState.Attack)
         {
             yield return null;
             stateInfo = _anim.GetCurrentAnimatorStateInfo(0);

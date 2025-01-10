@@ -837,7 +837,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   minTimeBeforeAttack: 0.5
-  minDistanceToAttack: 0.5
+  minDistanceToAttack: 0.6
   maxTimeBeforeAttack: 2
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
